@@ -19,7 +19,17 @@ window.location.href="index.html";
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
-</HEAD>
+<link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 <style>
 body {
 	margin-left: 0px;
@@ -37,14 +47,21 @@ body {
 	font-weight: bold;
 	font-size: 36px;
 }
--->
+
 </style>
+</HEAD>
+
 <BODY>
-<div align="center" class="style2">CLUB PAR SAISON</div>
-<p align="center"><a href="clubs.php">Ajout</a></p>
+<div class="container-fluid">
+<div class="card shadow mb-4">
+<div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-2 text-gray-800">Club par saison</h1>
+                        <a href="clubs.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Ajouter</a>
+                                 
+                        </div>
 <?php
 include('connect.php');
-
 
  $club1 = "";
  $ligue = "";
@@ -73,20 +90,20 @@ $rows = mysql_fetch_assoc($results);
 
 
 ?>
-
- <table width="100%" border="0" align="center"  class="text">
+<div class="card shadow mb-4">
+<div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
+<table >
 
         <tr>
           <td><form name="stat" method="post" action="">
 
-              <table border="0" width="100%"  class="text" style="BORDER-LEFT: #EEEEEE 7px solid; BORDER-RIGHT: #EEEEEE 7px solid; BORDER-TOP: #EEEEEE 7px solid; BORDER-BOTTOM: #EEEEEE 7px solid">
-                <tr>
+              <table class=" card-body">
+                <tr >
 
-                   <td align="right" width="25%"> Saison </td>
+                   <td > Saison </td>
 
-   <td align="left" width="25%"><select name="saison" size="1" id="club" tabindex="9" >
-        <option><?php echo $saison;?> </option>
-        <option> </option>
+   <td ><select name="saison" size="1" id="club" tabindex="9" class="custom-select " >
+        <option>Choisir...</option>
                       <?php
 					   do { 
                                      $res=$rows['saison'];
@@ -94,10 +111,11 @@ $rows = mysql_fetch_assoc($results);
                        } while ($rows = mysql_fetch_assoc($results));
 ?>
       </select></td>
+      
 
-                   <td align="right" width="25%"> Ligue </td>
+                   <td > Ligue </td>
 
-   <td align="left" width="25%"><select name="ligue" size="1" id="club" tabindex="9" >
+   <td ><select name="ligue" size="1" id="club" tabindex="9"  class="custom-select "  >
         <option><?php echo $ligue;?> </option>
         <option> </option>
                       <?php
@@ -109,9 +127,9 @@ $rows = mysql_fetch_assoc($results);
       </select></td>
 
 
-                   <td align="right" width="25%"> Club </td>
+                   <td > Club </td>
 
-   <td align="left" width="25%"><select name="club" size="1" id="club" tabindex="9" >
+   <td  ><select name="club" size="1" id="club" tabindex="9" class="custom-select "  >
         <option><?php echo $club1;?> </option>
         <option> </option>
                       <?php
@@ -122,8 +140,8 @@ $rows = mysql_fetch_assoc($results);
 ?>
       </select></td>
 
-                   <td align="left" width="50%">
-<input name="ok" type="submit" class="Style4" value = "Rechercher">
+                   <td >
+<input name="ok" type="submit" class="btn btn-sm btn-primary" value = "Rechercher">
                   </td>
 
 
@@ -138,16 +156,23 @@ $rows = mysql_fetch_assoc($results);
       </td>
   </tr>
 </table>
+                      </div></div>
+<div class="card-body">
 
 
+<div class="table-responsive">
+<table class="table table-bordered" id="dataTable" >
+<thead>
+                                        <tr>
+                                            <th>Club</th>
+                                            <th>Ligue</th>                                            
+                                            <th>Saison</th>
+                                        
+                                           
+                                            
+                                        </tr>
+                                        </thead>
 
-
-<table border="1" width="100%" id="table1">
-	<tr>
-		<td><div align="center"><strong>Club</strong></div></td>
-		<td><div align="center"><strong>Ligue</strong></div></td>
-		<td><div align="center"><strong>Saison</strong></div></td>
-	</tr>
 <?php
 if ($saison<>""){$query ="SELECT * FROM clubb where club like '%$club1%' and saison like '%$saison%' and ligue like '%$ligue%' ";}
 if ($saison==""){$query ="SELECT * FROM clubb order club";}
@@ -163,11 +188,12 @@ do {?>
     
     
    </tr>
-<?php					}while	 ($row=mysql_fetch_assoc($result)); 
+<?php					}while	 (($row=mysql_fetch_assoc($result))); 
 
 
 ?> 
 </table>
+</div></div>
 <p>&nbsp;</p>
 
 <?php
@@ -180,7 +206,23 @@ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){
 <?php
 } 
 ?>
+</div>
+</div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="assets/js/demo/datatables-demo.js"></script>
 </body>
 
 </html>
