@@ -1,5 +1,18 @@
 
+<?php
+session_start();
+//$club = $_SESSION['club'];
+$club1 = $_SESSION['club'];
+//$club = $_GET['club'];
 
+if ($club1 == null) {
+?>	 
+<script type="text/javascript">
+window.location.href="index.html";
+</script>
+
+<?php	 }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,10 +41,35 @@
 </head>
 
 <body id="page-top">
+<?php
+include('connect.php');
+function console_log($output, $with_script_tags = true) {
+    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
+');';
+    if ($with_script_tags) {
+        $js_code = '<script>' . $js_code . '</script>';
+    }
+    echo $js_code;
+}
 
+//  $club1 = "";
+// if (isset($_POST['club'])) {
+    
+//   $club1 = (get_magic_quotes_gpc()) ? $_POST['club'] : addslashes($_POST['club']);
+//   console_log($club1);
+// }
+
+if (($club1=="admin")or($club1=="ADMIN")or($club1=="Admin")) {
+$query1 ="SELECT distinct(club) from clubb order by club";	 
+$result1 = mysql_query($query1,$connexion);
+console_log($result1);
+$row1 = mysql_fetch_assoc($result1);
+console_log($row1);
+}
+?>
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+  
    
 
         <!-- Content Wrapper -->
@@ -40,8 +78,12 @@
             <!-- Main Content -->
             <div id="content">
 
-        
+            <form name="stat" method="post" action="">
 
+
+
+
+<form  name="stat" method="post" action="">
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                             
@@ -51,27 +93,23 @@
                         <h1 class="h3 mb-2 text-gray-800">Clubs</h1>
                         <a href="club.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Ajouter</a>
+                                <select name="club" size="1" id="club" tabindex="9" class="custom-select col-sm-4">
+                      <?php
+                      echo"<option>Selectionner le club</option>";
+					   do {         
+                                     $res=$row1['club'];
+                                      echo "<option >$res</option>";
+                       } while ($row1 = mysql_fetch_assoc($result1));
+                             ?>
+                             </select> <input name="ok" type="submit" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" value = "Rechercher">    
                         </div>
-                        <?php
-include('connect.php');
-
-
- $club1 = "";
-if (isset($_POST['club'])) {
-  $club1 = (get_magic_quotes_gpc()) ? $_POST['club'] : addslashes($_POST['club']);}
-
-if (($club1=="admin")or($club1=="ADMIN")or($club1=="Admin")) {
-$query1 ="SELECT club from club order by club";	 
-$result1 = mysql_query($query1,$connexion);
-$row1 = mysql_fetch_assoc($result1);}
-
-
-?>
- 
+  
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                                
+                             <form name="stat" method="post" action="">
+                             <thead>
                                         <tr>
                                             <th>Club</th>
                                             <th>Ligue</th>                                            
@@ -86,30 +124,32 @@ $row1 = mysql_fetch_assoc($result1);}
                                         </thead>
                                         <tbody>
                                         <?php
-if ($club1 <> "") {$query ="SELECT * FROM club where club like '%$club1%'";}
-if ($club1 == "") {$query ="SELECT * FROM club order by actif Desc,club";}
+                                        $club1="";
 
-$result = mysql_query($query,$connexion);
-$row = mysql_fetch_assoc($result);
+                                           if ($club1 <> "") {$query ="SELECT * FROM club where club like '%$club1%'";}
+                                           if ($club1 == "") {$query ="SELECT * FROM club order by actif Desc,club";}
 
-do {?>
-	<tr>
-	  <td><?php echo $row['club'];?></div></td>
-	  <td><?php echo $row['ligue'];?></td>
-	  <td><?php echo $row['club'];?></td>
-	  <td><?php echo $row['pw'];?></td>
-	  <td><?php echo $row['actif'];?></td>
+                                           $result = mysql_query($query,$connexion);
+                                           $row = mysql_fetch_assoc($result);
+
+                                           do {?>
+                                           	<tr>
+                                           	  <td><?php echo $row['club'];?></div></td>
+	                                             <td><?php echo $row['ligue'];?></td>
+	                                             <td><?php echo $row['club'];?></td>
+	                                             <td><?php echo $row['pw'];?></td>
+	                                             <td><?php echo $row['actif'];?></td>
+                                               
     
-    
-      <td><?php if ($row['club'] <> "ADMIN") {?><a href ='delclub.php?code<?php echo "=$row[id]";?>'><b>Supprimer</b></a><?php }?></td>
-      <td><a href ='updclub.php?code<?php echo "=$row[id]";?>'><b>Modifier</b></a></td>
-   </tr>
-<?php					}while	 ($row=mysql_fetch_assoc($result)); 
+                                                 <td><?php if ($row['club'] <> "ADMIN") {?><a href ='delclub.php?code<?php echo "=$row[id]";?>'><b>Supprimer</b></a><?php }?></td>
+                                                 <td><a href ='updclub.php?code<?php echo "=$row[id]";?>'><b>Modifier</b></a></td>
+                                              </tr>
+                                           <?php					}while	 ($row=mysql_fetch_assoc($result)); 
 
 
-?>
+                                           ?>
                                     
-                                    <tfoot>
+                                     <tfoot>
                                         <tr>
                                         <th>Club</th>
                                             <th>Ligue</th>                                            
@@ -124,13 +164,14 @@ do {?>
 						
                                 </table>
                             </div>
+</from
                         </div>
                     </div>
 
-                </div>
-                <!-- /.container-fluid -->
+                  </div>
+                       <!-- /.container-fluid -->
 
-            </div>
+                        </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
