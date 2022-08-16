@@ -81,7 +81,7 @@ $saison = $row01[0];
     <div id="wrapper">
 
             <!-- Sidebar -->
-     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" >
+     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion "  >
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
