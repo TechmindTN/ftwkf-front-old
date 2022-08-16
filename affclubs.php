@@ -18,7 +18,7 @@ window.location.href="index.html";
 <HTML lang="ar" dir="ltr">
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Clubs par saison</TITLE>
 <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -58,12 +58,7 @@ body {
  </div>
 <div class="container-fluid">
 <div class="card shadow mb-4">
-<div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-2 text-gray-800">Club par saison</h1>
-                        <a href="clubs.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Ajouter</a>
-                                 
-                        </div>
+
 <?php
 include('connect.php');
 
@@ -94,15 +89,20 @@ $rows = mysql_fetch_assoc($results);
 
 
 ?>
+<div class="mb-4">
 
-<div class="card shadow mb-4">
+
 <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
 <table >
-
+                        <h1 class="h3 mb-2 text-gray-800">Club par saison</h1>
+                        <a href="clubs.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Ajouter</a>
+                                 
+                        </div>
         <tr>
           <td><form name="stat" method="post" action="">
 
-              <table class=" card-body">
+              <table>
                 <tr >
 
                    <td > Saison </td>
@@ -201,16 +201,7 @@ do {?>
 </div></div>
 <p>&nbsp;</p>
 
-<?php
-if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
-?>
-<p align="center"><a href="clubs.php">Ajout</a></p>
-<?php
-//}else{ 
-?>
-<?php
-} 
-?>
+
 </div>
 </div>
 </div>
