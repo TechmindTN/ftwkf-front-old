@@ -83,7 +83,6 @@ console_log($row1);
 
 
 
-<form  name="stat" method="post" action="">
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                             
@@ -164,7 +163,7 @@ console_log($row1);
 						
                                 </table>
                             </div>
-</from
+                                           </from>
                         </div>
                     </div>
 
