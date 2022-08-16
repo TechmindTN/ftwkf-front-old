@@ -81,7 +81,9 @@ $saison = $row01[0];
     <div id="wrapper">
 
             <!-- Sidebar -->
-    
+            <div id='side'></div>
+            <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+ </div>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -291,7 +293,7 @@ $saison = $row01[0];
 
                 </nav>
                 <!-- End of Topbar -->
-  
+
 	
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -686,7 +688,7 @@ $saison = $row01[0];
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/chart-area-demo.js"></script>
     <script src="assets/js/demo/chart-pie-demo.js"></script>
-
+    <script src="template.js"></script>
 </body>
 
 </html>
