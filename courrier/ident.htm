@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<HTML lang="ar" dir="ltr">
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Un document bilingue</TITLE>
+</HEAD>
+<BODY>
+<p>
+  <script language="JavaScript1.2" >
+function Verification(theForm)
+{
+	if((document.forms[0].login.value == null) || (document.forms[0].login.value == ''))
+	{
+		alert("Veuillez remplir votre login S.V.P.");
+		document.forms[0].login.focus();
+		return false;
+	}
+	else
+	{
+		if((document.forms[0].Password.value == null) || (document.forms[0].Password.value == ''))
+		{
+			alert("Veuillez remplir votre Password S.V.P.");
+			document.forms[0].Password.focus();
+			return false;
+		}
+	}
+	return true;
+}
+
+</script>
+
+
+  
+
+</p>
+<form  name="form1" method="post" action= "ident.php" onSubmit= "writecookie()"  >
+<p align="center">
+<h2 align="center"><strong>Identification</strong>
+</h2>
+<table align="center">
+	<tr>
+		<td width="91"><b>Login</b></td>
+		<td width="144"><input type="text" name="id"></td>
+	</tr>
+	<tr>
+		<td><b>PW</b></td>
+		<td><input type="Password" name="password"></td>
+	</tr>
+</table>
+
+ <p>&nbsp;</p>
+ <tr>
+	<td>
+	  <div align="center">
+	    <input type="Submit" name="Submit" value="Valider"  > 
+      </div></td>
+  </tr>
+</form>
+
+</body>
