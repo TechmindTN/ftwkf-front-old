@@ -14,8 +14,19 @@ window.location.href="index.html";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
   "http://www.w3.org/TR/html4/strict.dtd">
-<HTML lang="ar" dir="rtl">
+<html lang="ar" dir="rtl">
 <HEAD>
+   <!-- Custom fonts for this template -->
+   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 .test {
@@ -35,11 +46,9 @@ window.location.href="index.html";
 }
 </style>
 </HEAD>
-<script language="javascript" type="text/javascript">
-// You can place JavaScript like this
-</script>
+
 <body>
-<html>
+
 <style>
 .tit{
 width:400px;
@@ -62,6 +71,11 @@ color:#000;
 font-weight:bold;}
 td a:hover {color:#ffffff;}
 </style>
+<div id="wrapper">
+<div id='side'></div>
+
+<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+ </div>
 <?php
 	   	include('connect.php');
 
@@ -98,16 +112,29 @@ $row2 = mysql_fetch_assoc($result2);
                 <tr>
                   <td colspan="3" valign="center"><div align="center">
 <input name="ok" type="submit" class="Style4" value="Exporter">
-                  </td>
+</div>  </td>
                 </tr>
               </table>
           </form></td>
         </tr>
 </table>
-      </td>
-  </tr>
-</table>
+    
+                      </div>
+<!-- Bootstrap core JavaScript-->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="assets/js/demo/datatables-demo.js"></script>
+    <script src="template.js"></script>
   </body>
 </html>

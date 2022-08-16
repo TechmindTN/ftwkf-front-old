@@ -27,7 +27,7 @@ window.location.href="index.html";
     <title>Clubs</title>
 
     <!-- Custom fonts for this template -->
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -38,6 +38,9 @@ window.location.href="index.html";
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 	<style>
+
+</HEAD>
+<style>
 body {
 	margin-left: 0px;
 	margin-top: 0px;
@@ -56,11 +59,17 @@ body {
 }
 
 </style>
-</HEAD>
-
 <BODY>
-<div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-2 text-gray-800">SAISON</h1>
+<div id="wrapper">
+<div id='side'></div>
+
+<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+ </div>
+
+
+<div class="row"><div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-2 text-gray-800">SAISON</h1></div>
+
                         
 								<?php
 if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
@@ -116,7 +125,17 @@ do {?>
 <p>&nbsp;</p>
 
 
-
+<?php
+if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
+?>
+<p align="center"><a href="saison.php">Ajout</a></p>
+<?php
+//}else{ 
+?>
+<?php
+} 
+?>
+</div>
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -132,6 +151,9 @@ do {?>
     <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/datatables-demo.js"></script>
+
+    <script src="template.js"></script>
+
 </body>
 
 </html>

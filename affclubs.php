@@ -52,6 +52,10 @@ body {
 </HEAD>
 
 <BODY>
+<div id="wrapper">
+<div id="side"></div>
+<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+ </div>
 <div class="container-fluid">
 <div class="card shadow mb-4">
 
@@ -86,6 +90,8 @@ $rows = mysql_fetch_assoc($results);
 
 ?>
 <div class="mb-4">
+
+
 <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
 <table >
                         <h1 class="h3 mb-2 text-gray-800">Club par saison</h1>
@@ -198,6 +204,7 @@ do {?>
 
 </div>
 </div>
+</div>
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -213,6 +220,8 @@ do {?>
     <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/datatables-demo.js"></script>
+    <script src="template.js"></script>
+
 </body>
 
 </html>

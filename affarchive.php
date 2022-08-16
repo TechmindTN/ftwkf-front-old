@@ -32,9 +32,9 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-   
-
-        <!-- Content Wrapper -->
+   <div id="side"></div>
+   <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+ </div>        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
@@ -139,7 +139,7 @@ do {
     <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/datatables-demo.js"></script>
-
+<script src="template.js"></script>
 </body>
 
 </html> -->
