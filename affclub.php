@@ -166,7 +166,7 @@ console_log($row1);
                                             <th>Actions</th> 
                                          </tr>
                                     </tfoot>
-                                    <tbody>
+                                           </tbody>
 						
                                 </table>
                             </div>
