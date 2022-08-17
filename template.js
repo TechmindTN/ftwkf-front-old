@@ -48,6 +48,12 @@ let side=`<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordi
 <i class="fas fa-fw fa-table"></i>
 <span>Photo Staff</span></a>
 </li>
+
+<hr class="sidebar-divider">
+
+<div class="sidebar-heading">
+Arbitres
+</div>
 <li class="nav-item">
 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
 aria-expanded="true" aria-controls="collapseTwo">
@@ -91,12 +97,6 @@ aria-expanded="true" aria-controls="collapseUtilitiess">
 </div>
 </div>
 </li>
-<hr class="sidebar-divider">
-
-<div class="sidebar-heading">
-Arbitres
-</div>
-
 <li class="nav-item">
 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
 aria-expanded="true" aria-controls="collapsePages">
