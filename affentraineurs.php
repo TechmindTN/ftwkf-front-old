@@ -29,26 +29,13 @@ window.location.href="index.html";
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
-</HEAD>
 <style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style><BODY>
+  .ml-1{
+    margin-left:11% !important;
+  }
+  </style>
+</HEAD>
+<BODY>
 
 
 <!-- Page Wrapper -->
@@ -58,12 +45,16 @@ body {
    <!-- Sidebar -->
 <div id='side'></div>
 
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+<!-- <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 "> -->
  </div>
 
+ <div id="content ">
 
-<div align="center" class="style2">Lidte des Entaineurs à Valider</div>
-<p align="center">&nbsp;</p>
+<div align="center" class="container-fluid ml-1 ">
+<!-- DataTales Example -->
+                   <div class="card shadow mb-4">
+                   <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
+                   <div align="center" class="h3 mb-2 text-gray-800">Entraineurs</div>
 
 <?php 
 	   	include('connect.php');
@@ -85,16 +76,9 @@ $result001 = mysql_query($query001,$connexion);
 $row001 = mysql_fetch_assoc($result001);
 ?>
 
-<table width="100%" border="0" align="center"  class="text">
+<form name="stat" method="post" action="">
 
-        <tr>
-          <td><form name="stat" method="post" action="">
-
-              <table border="0" width="100%"  class="text" style="BORDER-LEFT: #EEEEEE 7px solid; BORDER-RIGHT: #EEEEEE 7px solid; BORDER-TOP: #EEEEEE 7px solid; BORDER-BOTTOM: #EEEEEE 7px solid">
-                <tr>
-
-                   <td align="right"> Club </td>
-   <td align="left" width="25%"><select name="club" size="1" id="club" tabindex="9">
+              Club <select class="custom-select col-sm-4"  name="club" size="1" id="club" tabindex="9">
      <option><?php echo $club1;?> </option>
      <?php
 					   do { 
@@ -102,32 +86,23 @@ $row001 = mysql_fetch_assoc($result001);
                                       echo "<option >$res</option>";
                        } while ($row001 = mysql_fetch_assoc($result001));
 ?>
-   </select></td>
-                   <td align="left" width="50%">
-<input name="ok" type="submit" class="Style4" value = "Rechercher">
-                  </td>
+   </select>
+<input name="ok" type="submit" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" value = "Rechercher">
+                 
 
-
-                </tr>
-
-
-              </table>
-
-          </form></td>
-        </tr>
-</table>
-      </td>
-  </tr>
-</table>
+          </form>
+      
  <?PHP     if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
         <div align="center"></div>
         <div align="center"></div>
       <?PHP  } ?>       
 
-
-<table border="1" width="100%" id="table1">
-	<tr>
+ </div>
+ <div class="card-body">
+                            <div class="table-responsive">
+<table class="table table-bordered"  width="100%" id="dataTable">
+ <thead><tr>
 	    <td ><div align="center"><strong>Saison </strong> </div> </td>
 		<td> <div align = "center"> <strong> N° Lic </strong> </div> </td>
 		<td> <div align = "center"> <strong> CIN </strong> </div> </td>
@@ -145,7 +120,10 @@ $row001 = mysql_fetch_assoc($result001);
 		<td ><div align="center"><strong>Diplome</strong></div></td>
 		<td ></td>
 		<td ></td>
+    <td></td>
 	</tr>
+ </thead>
+ <tbody>
 <?php
 
 
@@ -254,19 +232,16 @@ if ($etat == "1") {
 
 
 ?> 
+</tbody>
 </table>
-<p>&nbsp;</p>
 
-<?php
-//if ((($pers == null)and ($federation != "المركز الوطني لإعداد النخبة") and ($federation != "المراكز الإقليمية")) or ($tache =="ممرن وطني")){ 
-?>
+
 <p align="center"><a href="entraineur.php">Ajout</a></p>
-<?php
-//}else{ 
-?>
-<?php
-//} 
-?>
+</div>
+</div>
+</div>
+</div> 
+</div>
 </div>
   <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>

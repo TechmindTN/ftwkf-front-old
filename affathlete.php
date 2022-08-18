@@ -25,25 +25,7 @@ $club = $_SESSION['club'];
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
 </HEAD>
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style><BODY>
+<BODY>
 <div id="wrapper">
 <div id='side'></div>
 
@@ -85,7 +67,6 @@ $row01 = mysql_fetch_row($result01);
 
     if (($club=="admin")or($club=="ADMIN")or($club=="Admin") or ($club == "CENTRE")or($club == "Centre")or($club == "centre") or ($club == "NORD")or($club == "Nord")or($club == "nord") or ($club == "SUD")or($club == "Sud")or($club == "sud")) {
 	?>
-   <div align="center">
    <!--<a href ='liste.php'><b>Exporter</b></a>-->
    
    <?php
@@ -101,7 +82,6 @@ $row1 = mysql_fetch_assoc($result1);
 	  ?>
    
    
- </div>
  <form name="stat" method="post" action="">
 
               
@@ -124,7 +104,7 @@ $row1 = mysql_fetch_assoc($result1);
                        } while ($row1 = mysql_fetch_assoc($result1));
 ?>
       </select>
-<input name="ok" type="submit" class="Style4" value = "Rechercher">
+<input name="ok" type="submit"  class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" value = "Rechercher">
                  
 
 

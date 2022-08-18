@@ -28,27 +28,9 @@ window.location.href="index.html";
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Liste des entraineurs</TITLE>
 </HEAD>
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style><BODY>
+<BODY>
 
 <!-- Page Wrapper -->
     <div id="wrapper">
@@ -57,11 +39,19 @@ body {
    <!-- Sidebar -->
 <div id='side'></div>
 
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-1 ">
  </div>
 
-<div align="center" class="style2">Lidte des Entaineurs</div>
-<p align="center"><a href="entraineur.php">Ajout</a></p>
+<div id="content">
+
+ <div align="center" class="container-fluid ">
+ <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
+                    <div align="center" class="h3 mb-2 text-gray-800">Entraineurs</div>
+
+<p align="center"><a href="entraineur.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i>Ajout</a></p>
 
 <?php 
 	   	include('connect.php');
@@ -83,16 +73,12 @@ $result001 = mysql_query($query001,$connexion);
 $row001 = mysql_fetch_assoc($result001);
 ?>
 
-<table width="100%" border="0" align="center"  class="text">
 
-        <tr>
-          <td><form name="stat" method="post" action="">
+      
+         <form name="stat" method="post" action="">
 
-              <table border="0" width="100%"  class="text" style="BORDER-LEFT: #EEEEEE 7px solid; BORDER-RIGHT: #EEEEEE 7px solid; BORDER-TOP: #EEEEEE 7px solid; BORDER-BOTTOM: #EEEEEE 7px solid">
-                <tr>
 
-                   <td align="right" width="25%"> Saison </td>
-   <td align="left" width="25%"><select name="sais" size="1" id="sais" tabindex="9" onChange="document.stat.submit();">
+                   Saison <select name="sais" size="1" class="custom-select col-sm-4" id="sais" tabindex="9" onChange="document.stat.submit();">
         <option><?php echo $saison1;?> </option>
                       <?php
 					   do { 
@@ -100,10 +86,10 @@ $row001 = mysql_fetch_assoc($result001);
                                       echo "<option >$res</option>";
                        } while ($row01 = mysql_fetch_assoc($result01));
 ?>
-      </select></td>
-                   <td align="right" width="25%"> Club </td>
+      </select>
+                    Club 
 
-   <td align="left" width="25%"><select name="club" size="1" id="club" tabindex="9">
+ <select name="club" class="custom-select col-sm-4" size="1" id="club" tabindex="9">
         <option><?php echo $club1;?> </option>
                       <?php
 					   do { 
@@ -111,32 +97,24 @@ $row001 = mysql_fetch_assoc($result001);
                                       echo "<option >$res</option>";
                        } while ($row001 = mysql_fetch_assoc($result001));
 ?>
-      </select></td>
-                   <td align="left" width="50%">
-<input name="ok" type="submit" class="Style4" value = "Rechercher">
-                  </td>
+      </select>
+<input name="ok" type="submit"  class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm"  value = "Rechercher">
+                
 
-
-                </tr>
-
-
-              </table>
-
-          </form></td>
-        </tr>
-</table>
-      </td>
-  </tr>
-</table>
+          </form>
+</div>
  <?PHP     if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
-        <div align="center"><a href ='listee.php'><b>Exporter</b></a>     </div>    
-        <div align="center"><a href ='stat.php'><b>Statistique</b></a></div>
+     <!--   <div align="center"><a href ='listee.php'><b>Exporter</b></a>     </div>    
+        <div align="center"><a href ='stat.php'><b>Statistique</b></a></div>-->
       <?PHP  } ?>       
 
-
-<table border="1" width="100%" id="table1">
-	<tr>
+      <div class="card-body">
+                            <div class="table-responsive">
+<table class="table table-bordered" id="dataTable" cellspacing="0" width="100%"  >
+  
+<thead>	
+<tr>
 	    <td ><div align="center"><strong>Saison </strong> </div> </td>
 		<td> <div align = "center"> <strong> N° Lic </strong> </div> </td>
 		<td> <div align = "center"> <strong> CIN </strong> </div> </td>
@@ -155,7 +133,10 @@ $row001 = mysql_fetch_assoc($result001);
 		<td ></td>
 		<td ></td>
 		<td ></td>
+    <td ></td>
 	</tr>
+  </thead>
+  <tbody>
 <?php
 
 
@@ -199,7 +180,6 @@ if ($type == "مدرب فدرالي"){ $uploaddir ='entrf/' ; }
 
 if ($etat == "1") {
 ?>
-	<tr bgcolor="#00FF66">
 <?php }else {?>
 	<tr>
 <?php }?>
@@ -266,21 +246,17 @@ if ($etat == "1") {
 
 
 ?> 
+</tbody>
 </table>
-<p>&nbsp;</p>
 
-<?php
-//if ((($pers == null)and ($federation != "المركز الوطني لإعداد النخبة") and ($federation != "المراكز الإقليمية")) or ($tache =="ممرن وطني")){ 
-?>
-<p align="center"><a href="entraineur.php">Ajout</a></p>
-<?php
-//}else{ 
-?>
-<?php
-//} 
-?>
+
 </div>
-  <!-- Bootstrap core JavaScript-->
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -296,6 +272,7 @@ if ($etat == "1") {
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/datatables-demo.js"></script>
     <script src="template.js"></script>
+
 </body>
 
 </html>
