@@ -24,6 +24,10 @@ $club = $_SESSION['club'];
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Liste des athletes</TITLE>
+<style>
+.ml-1 {
+  margin-left:10.5% !important;
+}</style>
 </HEAD>
 
 <BODY>
@@ -34,15 +38,15 @@ $club = $_SESSION['club'];
 <!--<div align="center" class="style2"> Liste des Athletes</div>-->
   
 
-<div id="content">
+<div id="content " class="ml-1">
 
- <div align="center" class="container-fluid">
+ <div  class="container-fluid">
  <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
-                        <div align="center" class="h3 mb-2 text-gray-800">Athletes</div>
-                        <p align="center"><a href="athletes1.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i>Ajout</a></p>
+                        <div class="h3 mb-2 text-gray-800">Athletes</div>
+                        <a href="athletes1.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i>Ajout</a>
    <?PHP 
 	   	include('connect.php');
  $club1 = "";
@@ -126,10 +130,6 @@ if (($club == "ADMIN")or($club == "admin")or($club == "Admin")or($club == "dtn")
 if ($club1 <> "") {$query ="SELECT * FROM athletes where club = '$club1' and saison = '$saison1'";}
 if ($club1 == "") {$query ="SELECT * FROM athletes where saison = '$saison1'";}
 }
-
-
-
-
 $result = mysql_query($query,$connexion);
 $totalRows = mysql_num_rows($result);
 $row = mysql_fetch_assoc($result);
@@ -147,7 +147,7 @@ if (($actif == "1") and ($club <> "ADMIN")) {?>
 }?>
 <div class="card-body">
                             <div class="table-responsive">
-<table class="table table-bordered" id="dataTable"  cellspacing="0"  width="100%" >
+<table class="table table-bordered" id="dataTable"   width="100%" >
 	<thead>
   <tr>
 	    <td ><div align="center"><strong>Saison </strong> </div> </td>

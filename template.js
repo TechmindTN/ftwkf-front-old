@@ -1,51 +1,19 @@
 
+
+
+
 let side=`
-<?php 
-session_start(); 
-	include('connect.php');
-////$club = $_SESSION['club'];
-$club = $_SESSION['club'];
-//$club = $_GET['club'];
- if ($club == null) {
-?>	 
-<script type="text/javascript">
-window.location.href="index.html";;
-</script>
-<?php	 }
-$query01 ="SELECT saison FROM saison where actif = 1";
-$result01 = mysql_query($query01,$connexion);
-$row01 = mysql_fetch_row($result01);
-$saison = $row01[0];
 
-                                                    $query ="SELECT count(*) as total from clubb";
-        
-                                                    $result = mysql_query($query,$connexion);
-                                                    $row = mysql_fetch_assoc($result);
 
-                                                    $query1 ="SELECT count(*) as total1 from athletes1";
-        
-                                                    $result1 = mysql_query($query1,$connexion);
-                                                    $row1 = mysql_fetch_assoc($result1);
-
-                                                    $query2 ="SELECT count(*) as total2 from entraineur1";
-        
-                                                    $result2 = mysql_query($query2,$connexion);
-                                                    $row2 = mysql_fetch_assoc($result2);
-                                                    $query3 ="SELECT count(*) as total3 from athletes";
-        
-                                                    $result3 = mysql_query($query3,$connexion);
-                                                    $row3 = mysql_fetch_assoc($result3);
-
-                                                ?>
-                                                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion "  id="accordionSidebar" style="position:fixed; z-index:1">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion "  id="accordionSidebar" style="position:fixed; z-index:1">
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="corp.php" >
 <div class="sidebar-brand-icon rotate-n-15">
 <i class="fas fa-user"></i>
 </div>
-<div class="sidebar-brand-text mx-3"><?php echo $club; ?> &nbsp;<?php echo $saison;?><sup>2</sup></div>
+<div class="sidebar-brand-text mx-3"> <script> echo 'ahla';
+<?php echo $club; ?> &nbsp;<?php echo $saison;?> </script></div>
 </a>
 
-<hr class="sidebar-divider my-0">
 
 <li class="nav-item active">
 <a class="nav-link" href="corp.php">
@@ -53,7 +21,6 @@ $saison = $row01[0];
 <span>Dashboard</span></a>
 </li>
 
-<hr class="sidebar-divider">
 
 <div class="sidebar-heading">
 </div>
@@ -68,19 +35,22 @@ $saison = $row01[0];
 <span>Saison</span></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="affparam.php">
-<i class="fas fa-fw fa-table"></i>
-<span>Poids</span></a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="affage.php">
-<i class="fas fa-fw fa-table"></i>
-<span>Age</span></a>
-</li>
-<li class="nav-item">
 <a class="nav-link" href="affprogramme.php">
 <i class="fas fa-fw fa-table"></i>
 <span>Competitions</span></a>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOnes"
+aria-expanded="true" aria-controls="collapseTwo">
+<i class="fas fa-fw fa-user"></i>
+<span>Catégories</span>
+</a>
+<div id="collapseOnes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+<div class="bg-white py-2 collapse-inner rounded">
+<a class="collapse-item" href="affparam.php">Poids</a>  
+ <a class="collapse-item" href="affage.php">Age</a>
+</div>
+</div>
 </li>
 <li class="nav-item">
 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
@@ -109,11 +79,8 @@ aria-expanded="true" aria-controls="collapseTwo">
 </div>
 </div>
 </li>
-<hr class="sidebar-divider">
 
-<div class="sidebar-heading">
-Licences
-</div>
+
 
 <li class="nav-item">
 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -180,16 +147,6 @@ aria-expanded="true" aria-controls="collapsePages">
 <i class="fas fa-fw fa-chart-area"></i>
 <span>Statistiques</span></a>
 </li>
-
-
-
-<hr class="sidebar-divider d-none d-md-block">
-
-<div class="text-center d-none d-md-inline">
-</div>
-
-
-
 </ul>
 
 

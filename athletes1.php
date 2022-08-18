@@ -10,10 +10,17 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+        <title>Ajout athlete</title>
+
+<!-- Custom fonts for this template-->
+
+
+<!-- Custom styles for this template-->
+<link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+<style>
+.ml-1 {
+  margin-left: 15% !important;
+}</style>
 </HEAD>
 <?php
 session_start();
@@ -48,7 +55,7 @@ $rows = mysql_fetch_assoc($results);
 
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Ajout athlete</TITLE>
 <script language="JavaScript" src="Calendar1-903.js" type="text/javascript"></script>
 <script language="JavaScript" type="text/javascript">
 function TryCallFunction() {
@@ -110,17 +117,9 @@ document.forms[0].method = "get";
 document.forms[0].action = "addathlete.php";
 document.forms[0].submit();
   }
-
-
 }
-
-//-->
 </script>
-<link href="Calendar.css" rel="stylesheet" type="text/css" />
-<link href="../../styles/default.css" rel="stylesheet" type="text/css" />
-<meta name="Keywords" content="Popup Date Picker, Softricks Javascript Calendar" />
-<meta name="Description" content="Softricks Javascript Popup date picker calendar. The most versatile and feature-packed popup calendar for taking date inputs on the web." />
-</HEAD>
+
 </HEAD>
 
 <BODY>
@@ -128,27 +127,65 @@ document.forms[0].submit();
 
             <!-- Sidebar -->
             <div id='side'></div>
-            <div class="row">
-            <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
-
-<div class="style2">إضافة رياضيين</div>
-<form action="addathlete1.php" method="post" enctype="multipart/form-data" name="MForm">
-
-  <table width="100%" border="0">
-    <tr>
-      <td width="" rowspan="2" align="left">اللقب</td>
-      <td width="" rowspan="2" align="left"><input name="nom" type="text" id="nom" tabindex="1" size="25" value =""></td>
-      <td width="" rowspan="2" align="left">الاسم </td>
-      <td width="" rowspan="2" align="left"><input name="prenom" type="text" id="prenom" tabindex="2" size="25" value =""></td>
-      <td width="12%" rowspan="2" align="left">تاريخ الولادة</td>
-      <td width="4%" align="center">يوم</td>
-      <td width="4%" align="center">شهر</td>
-      <td width="6%" align="center">سنة</td>
-      <td width="8%" rowspan="2" align="left">الرياضة</td>
-      <td width="4%" rowspan="2" align="center"><select name="sport" size="1" id="sport" tabindex="6">
+            <div class="container ml-1">        
+            <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+            <div class="row">    
+            <div class="col-lg-12">
+                   
+            <div class="p-5"><div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Ajout athlete</h1>
+                            </div>
+                            <form action="addathlete1.php" method="post" enctype="multipart/form-data" name="MForm">
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                      <label >Nom :   </label>
+                                        <input name="nom" type="text" id="nom" tabindex="1" size="25" class="form-control form-control-user"   >
+                                    </div>
+                                    <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
+                                    <label>Prénom : </label>
+                                        <input name="prenom" type="text" id="prenom" tabindex="2" size="25" value =""   class="form-control form-control-user" >
+                                    </div>
+                                
+                               
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label>CIN: </label>
+                                    <input  class="form-control form-control-user"
+                                    name="cin" type="text" id="cin" tabindex="7" size="25" value ="">
+                                    </div>
+                                  
+                                </div>
+                                <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                <label>Date naissance: </label>
+                                     <div class="form-group row">
+                                   <div class="col-sm-4 mb-3 mb-sm-0"><label>Jour </label> <input name="jour" type="text" 
+                                   id="jour" tabindex="3" size="4" maxlength="2" value =""  class="form-control form-control-user"></div> 
+                                   <div class="col-sm-4 mb-3 mb-sm-0"> <label>Mois </label>
+                                   <input name="mois" type="text" id="mois" tabindex="4" size="4" maxlength="2" value ="" class="form-control form-control-user">
+                                  </div> 
+                                   <div class="col-sm-4 mb-3 mb-sm-0"><label>année</label> <input name="annee" type="text" id="annee" tabindex="5" size="8" maxlength="4" value ="" class="form-control form-control-user"></div></div>
+                                     
+                                  </div>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label>Sexe: </label>
+                                    <select  class="form-control form-control-user" name="sexe" size="1" id="sexe" tabindex="10">
+                                       <option> </option>
+                                       <option>ذكر</option>
+                                       <option>أنثى</option>
+                                     </select>
+                                  </div>
+                                  <div class="col-sm-4 mb-3 mb-sm-0">
+                                  <label>Nationalité : </label>
+                                        <input name="nationalite" type="text" id="nationalite" tabindex="10" size="25" value ="" class="form-control form-control-user" >
+                                  
+                                  </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                      <label >sport :   </label>
+                                      <select name="sport" size="1" id="sport" tabindex="6" class="form-control form-control-user">
         <option></option>        
-        <option></option>
         <option>وشوكونغ فو</option>
         <option>كمبو</option>
         <option>ديكايتو ريو</option>
@@ -156,44 +193,25 @@ document.forms[0].submit();
         <option>فوفينام فيات فوداو</option>
         <option>فوت وات فان فوداوو و الأنشطة التابعة</option>
         <option>هابكيدو</option>
-        <option>الكيسندو</option></select></td>
-    </tr>
-
-    <tr>
-      <td align="center"><input name="jour" type="text" id="jour" tabindex="3" size="4" maxlength="2" value =""></td>
-      <td align="center"><input name="mois" type="text" id="mois" tabindex="4" size="4" maxlength="2" value =""></td>
-      <td align="left"><input name="annee" type="text" id="annee" tabindex="5" size="8" maxlength="4" value =""></td>
-    </tr>
-       </table>
-<table width="100%" border="0">
-    <tr>
-      <td width="" align="left">ب ت و</td>
-      <td width="" align="left"><input name="cin" type="text" id="cin" tabindex="7" size="25" value =""></td>
-      <td width="" align="left">الجنس</td>
-      <td width="" align="left"><select name="sexe" size="1" id="sexe" tabindex="10">
-        <option> </option>
-        <option>ذكر</option>
-        <option>أنثى</option>
-      </select></td>
-      <td width="" align="left">الجنسية</td>
-      <td align="left"><input name="nationalite" type="text" id="nationalite" tabindex="10" size="25" value =""></td>
-    </tr>
-    </table>
-    <table width="100%" border="0">
-    <tr>
-      <td align="left">النادي</td>
-      <td align="left"><select name="club2" size="1" id="club" tabindex="9">
-        <option><?php echo $club1;?></option>
-        <?php
-					   do { 
-                                     $res=$row1['club'];
-                                      echo "<option >$res</option>";
-                       } while ($row1 = mysql_fetch_assoc($result1));
-?>
-      </select></td>
-      <td align="left">الرابطة</td>
-      <td align="left"><select name="ligue" size="1" id="ligue" tabindex="9" >
-        <option><?php echo $ligue;?></option>
+        <option>الكيسندو</option></select>
+                                    </div>
+                                    <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
+                                    <label>Club: </label>
+                                    <select  class="form-control form-control-user" name="club2" size="1" id="club" tabindex="9">
+                                                   <option></option>
+                                                   <?php
+					                                              do { 
+                                                                                $res=$row1['club'];
+                                                                                 echo "<option >$res</option>";
+                                                                  } while ($row1 = mysql_fetch_assoc($result1));
+                                           ?>
+                                            </select>
+                                    </div>
+                                
+                               
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label>Ligue: </label>
+                                    <select name="ligue" size="1" id="ligue" tabindex="9" class="form-control form-control-user" >
         <option> </option>
         <?php
 					   do { 
@@ -201,30 +219,41 @@ document.forms[0].submit();
                                       echo "<option >$res</option>";
                        } while ($rowl = mysql_fetch_assoc($resultl));
 ?>
-      </select></td>
-	  <td>الموسم</td>
-      <td align="left"><select name="sais" size="1" id="sais" tabindex="9" onChange="document.stat.submit();">
-        <option><?php echo $saison1;?></option>
+      </select>
+                                    </div>
+                                  
+                                </div>
+                                                                          
+                                <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                <label>Saison: </label>
+                                     
+                                <select name="sais" size="1" id="sais" tabindex="9" onChange="document.stat.submit();"  class="form-control form-control-user">
+        <option></option>
         <?php
 					   do { 
                                      $res=$rows['saison'];
                                       echo "<option >$res</option>";
                        } while ($rows = mysql_fetch_assoc($results));
 ?>
-      </select></td>
-	  <td>رقم الإجازة</td>
-      <td align="left"><input name="lic" type="text" id="prenom2" tabindex="2" size="25" value =""></td>
-    </tr>
-  </table>
+      </select>
+                                  </div>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label>Numéro licence :  </label>
+                                    <input  class="form-control form-control-user"  name="lic" type="text" id="prenom2" tabindex="2" size="25" value =""/>
+                                  </div>
+                                  <div class="col-sm-4 mb-3 mb-sm-0 text-center">
+                                  <input name="club" type="hidden" id="cin" tabindex="10" size="25" value ="<?php echo $club ; ?> ">
+<br>
+            <button  type="submit" name="valider" id="valider"  class="btn btn-danger">Ajouter</button>
+                                  </div>
+                                  </div>
+                                
+                            </form>
 
-<input name="club" type="hidden" id="cin" tabindex="10" size="25" value ="<?php echo $club ; ?> ">
-  <p align="center">
-      <input type="submit" name="valider" id="valider" value="تسجيل">
-  </p>
-</form>
 </div>
-</div>
-
+</div></div></div></div>
+                      </div>
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

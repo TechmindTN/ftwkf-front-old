@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Ajout saison</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -54,24 +54,9 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 <meta name="Keywords" content="Popup Date Picker, Softricks Javascript Calendar" />
 <meta name="Description" content="Softricks Javascript Popup date picker calendar. The most versatile and feature-packed popup calendar for taking date inputs on the web." />
 <style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-
-</style>
+.ml-1 {
+  margin-left: 20% !important;
+}</style>
 <?php
 session_start();
 //$club = $_SESSION['club'];
@@ -94,7 +79,10 @@ window.location.href="index.html";
 
 
 <body>
-<div class="container">
+<div id="wrapper">
+<div id='side'></div>
+
+<div class="container ml-1">
 
 <div class="card o-hidden border-0 shadow-lg my-5">
     <div class="card-body p-0">
@@ -112,12 +100,12 @@ window.location.href="index.html";
                             <label>Saison :</label>
                                 <input type="text" class="form-control form-control-user"name="saison"  id="saison" tabindex="2"  required>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
                               <label>Date Début :</label>
                                 <input type="date" class="form-control form-control-user" id="datedebut" name="datedebut"
                                      tabindex="2" required>
                             </div> 
-                            <div class="col-sm-4">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
                               <label>Date Fin :</label>
                                 <input type="date" class="form-control form-control-user" id="datefin" name="datefin"
                                     tabindex="2" required>
@@ -140,7 +128,7 @@ window.location.href="index.html";
     </div>
 </div>
 
-</div>
+</div></div>
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -149,6 +137,8 @@ window.location.href="index.html";
     <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
+    <script src="template.js"></script>
+
     <script src="assets/js/sb-admin-2.min.js"></script>
 </body>
 
