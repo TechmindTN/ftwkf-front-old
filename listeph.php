@@ -14,7 +14,7 @@ window.location.href="index.html";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
   "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="ltr">
 <HEAD>
    <!-- Custom fonts for this template -->
    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

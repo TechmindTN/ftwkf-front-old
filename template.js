@@ -78,15 +78,43 @@ $saison = $row01[0];
 <span>Age</span></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="listeph.php">
+<a class="nav-link" href="affprogramme.php">
 <i class="fas fa-fw fa-table"></i>
-<span>Photo</span></a>
+<span>Competitions</span></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="listephs.php">
-<i class="fas fa-fw fa-table"></i>
-<span>Photo Staff</span></a>
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+aria-expanded="true" aria-controls="collapseTwo">
+<i class="fas fa-fw fa-user"></i>
+<span>Photos</span>
+</a>
+<div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+<div class="bg-white py-2 collapse-inner rounded">
+<a class="collapse-item" href="listeph.php">Photos</a>  
+ <a class="collapse-item" href="listephs.php">Photos Staff</a>
+</div>
+</div>
 </li>
+
+<li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+aria-expanded="true" aria-controls="collapseTwo">
+<i class="fas fa-fw fa-user"></i>
+<span>Paiement</span>
+</a>
+<div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+<div class="bg-white py-2 collapse-inner rounded">
+<a class="collapse-item" href="affpaiement.php">Paiement</a>  
+ <a class="collapse-item" href="affpaiementt.php">Paiement a valider    </a>
+</div>
+</div>
+</li>
+<hr class="sidebar-divider">
+
+<div class="sidebar-heading">
+Licences
+</div>
+
 <li class="nav-item">
 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
 aria-expanded="true" aria-controls="collapseTwo">
@@ -96,8 +124,8 @@ aria-expanded="true" aria-controls="collapseTwo">
 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 <div class="bg-white py-2 collapse-inner rounded">
 <a class="collapse-item" href="affathlete.php">Déja affiliés</a>  
- <a class="collapse-item" href="buttons.html">Demandes</a>
-<a class="collapse-item" href="cards.html">Refusées</a>
+ <a class="collapse-item" href="affathletes.php">Demandes</a>
+<a class="collapse-item" href="affathletedel.php">Refusées</a>
 </div>
 </div>
 </li>
@@ -130,12 +158,6 @@ aria-expanded="true" aria-controls="collapseUtilitiess">
 </div>
 </div>
 </li>
-<hr class="sidebar-divider">
-
-<div class="sidebar-heading">
-Arbitres
-</div>
-
 <li class="nav-item">
 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
 aria-expanded="true" aria-controls="collapsePages">
@@ -144,23 +166,15 @@ aria-expanded="true" aria-controls="collapsePages">
 </a>
 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 <div class="bg-white py-2 collapse-inner rounded">
-<h6 class="collapse-header">Login Screens:</h6>
-<a class="collapse-item" href="login.html">Login</a>
-<a class="collapse-item" href="register.html">Register</a>
-<a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+<a class="collapse-item" href="affentraineur.php">Entraineurs</a>
+<a class="collapse-item" href="affentraineurs.php">Entraineurs a valider</a>
+
 <div class="collapse-divider"></div>
-<h6 class="collapse-header">Other Pages:</h6>
-<a class="collapse-item" href="404.html">404 Page</a>
-<a class="collapse-item" href="blank.html">Blank Page</a>
 </div>
 </div>
 </li>
 
-<li class="nav-item">
-<a class="nav-link" href="tables.html">
-<i class="fas fa-fw fa-table"></i>
-<span>Licences</span></a>
-</li>
+
 <li class="nav-item">
 <a class="nav-link" href="charts.html">
 <i class="fas fa-fw fa-chart-area"></i>

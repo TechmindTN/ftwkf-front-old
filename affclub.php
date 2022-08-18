@@ -69,14 +69,8 @@ console_log($result1);
 $row1 = mysql_fetch_assoc($result1);
 console_log($row1);
 }?>
-  <div class="row">
-    <div class="col">
-    <div  class=""id='side'></div>
-    </div>
-    <div class="col-12">
-      2 of 3 (wider)
+  
    
-<div  class=""id='side'></div>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -85,6 +79,11 @@ console_log($row1);
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column ">
+<div id='side'></div>
+
+
+
+
 
             <!-- Main Content -->
             <div id="content" class="ml-1">
@@ -170,7 +169,7 @@ console_log($row1);
                                             <th>Actions</th> 
                                          </tr>
                                     </tfoot>
-                                    <tbody>
+                                           </tbody>
 						
                                 </table>
                             </div>
@@ -203,7 +202,7 @@ console_log($row1);
     </div>
   
     
-    </div></div>
+ 
     <!-- Logout Modal-->
  
 
