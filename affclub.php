@@ -37,7 +37,10 @@ window.location.href="index.html";
 
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+<style>
+.ml-1 {
+  margin-left: 15% !important;
+}</style>
 </head>
 
 <body id="page-top">
@@ -65,24 +68,26 @@ $result1 = mysql_query($query1,$connexion);
 console_log($result1);
 $row1 = mysql_fetch_assoc($result1);
 console_log($row1);
-}
-?>
+}?>
+  <div class="row">
+    <div class="col">
+    <div  class=""id='side'></div>
+    </div>
+    <div class="col-12">
+      2 of 3 (wider)
+   
+<div  class=""id='side'></div>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
 
    <!-- Sidebar -->
-<div id='side'></div>
-
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
-
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column ">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" class="ml-1">
 
             <form name="stat" method="post" action="">
 
@@ -196,7 +201,9 @@ console_log($row1);
         <i class="fas fa-angle-up"></i>
     </a>
     </div>
-
+  
+    
+    </div></div>
     <!-- Logout Modal-->
  
 

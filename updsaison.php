@@ -128,27 +128,29 @@ $row = mysql_fetch_assoc($result);
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                       <label>Saison : </label>
-                                        <input type="text" class="form-control form-control-user" id="club"
-                                        value ="<?php echo $row['saison'];?>" name="club"> 
+                                        <input name="saison" type="text" id="club" tabindex="3" class="form-control form-control-user"  value ="<?php echo $row['saison'];?>" >
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" name="ligue" 
-                                        id="ligue" tabindex="2"  value ="<?php echo $row['ligue'];?>">
+                                    <label>Date début : </label>
+                                        <input name="datedebut" type="date" id="ligue" tabindex="2"   class="form-control form-control-user" value ="<?php echo $row['datedebut'];?>">
                                     </div>
                                 </div>
-                             
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input  class="form-control form-control-user"
-                                        name="pw" type="text" id="pw" tabindex="1" size="25" value ="<?php echo $row['pw'];?>">
+                                    <label>Date fin : </label>
+                                    <input  class="form-control form-control-user"
+                                    name="datefin" type="date" id="pw" tabindex="1" size="25" value ="<?php echo $row['datefin'];?>">
                                     </div>
-                                    <div class="col-sm-6 ">
-                                      <div class="form-group row" >
-                                      <label for="inputPassword" class="col-sm-2 col-form-label">Actif</label>
-                                         <div class="col-10"><input class="form-control form-control-user"
-                                        name="actif" type="text" id="pw" tabindex="1" value ="<?php echo $row['actif'];?>"></div>
-                                        </div> 
+                                    <div class="col-sm-6 text-center container my-1 ">
+                    
+            <button type="submit" class="btn btn-danger">Modifier</button>
                                     </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                   
+                                    </div>
+                                  
                                           
                                         <input name="cod" type="hidden" id="cod" tabindex="100" size="0" value ="<?php echo $row['id'];?>">
                                     

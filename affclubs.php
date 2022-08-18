@@ -54,8 +54,7 @@ body {
 <BODY>
 <div id="wrapper">
 <div id="side"></div>
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
+
 <div class="container-fluid">
 <div class="card shadow mb-4">
 

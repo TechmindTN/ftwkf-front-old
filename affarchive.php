@@ -33,8 +33,7 @@
     <div id="wrapper">
 
    <div id="side"></div>
-   <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>        <!-- Content Wrapper -->
+           <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
@@ -52,7 +51,8 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
 						<h1 class="h3 mb-2 text-gray-800">Historiques</h1>
-                        </div>
+                        
+                    </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

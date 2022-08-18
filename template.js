@@ -1,9 +1,48 @@
-let side=`<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion "  id="accordionSidebar" style="position:fixed; z-index:1">
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="corp.php">
+
+let side=`
+<?php 
+session_start(); 
+	include('connect.php');
+////$club = $_SESSION['club'];
+$club = $_SESSION['club'];
+//$club = $_GET['club'];
+ if ($club == null) {
+?>	 
+<script type="text/javascript">
+window.location.href="index.html";;
+</script>
+<?php	 }
+$query01 ="SELECT saison FROM saison where actif = 1";
+$result01 = mysql_query($query01,$connexion);
+$row01 = mysql_fetch_row($result01);
+$saison = $row01[0];
+
+                                                    $query ="SELECT count(*) as total from clubb";
+        
+                                                    $result = mysql_query($query,$connexion);
+                                                    $row = mysql_fetch_assoc($result);
+
+                                                    $query1 ="SELECT count(*) as total1 from athletes1";
+        
+                                                    $result1 = mysql_query($query1,$connexion);
+                                                    $row1 = mysql_fetch_assoc($result1);
+
+                                                    $query2 ="SELECT count(*) as total2 from entraineur1";
+        
+                                                    $result2 = mysql_query($query2,$connexion);
+                                                    $row2 = mysql_fetch_assoc($result2);
+                                                    $query3 ="SELECT count(*) as total3 from athletes";
+        
+                                                    $result3 = mysql_query($query3,$connexion);
+                                                    $row3 = mysql_fetch_assoc($result3);
+
+                                                ?>
+                                                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion "  id="accordionSidebar" style="position:fixed; z-index:1">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="corp.php" >
 <div class="sidebar-brand-icon rotate-n-15">
 <i class="fas fa-user"></i>
 </div>
-<div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+<div class="sidebar-brand-text mx-3"><?php echo $club; ?> &nbsp;<?php echo $saison;?><sup>2</sup></div>
 </a>
 
 <hr class="sidebar-divider my-0">
