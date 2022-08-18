@@ -82,8 +82,7 @@ $saison = $row01[0];
 
             <!-- Sidebar -->
             <div id='side'></div>
-            <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
+     
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 

@@ -110,17 +110,17 @@ window.location.href="index.html";
                         <div class="form-group row">
                             <div class="col-sm-4 mb-3 mb-sm-0">
                             <label>Saison :</label>
-                                <input type="text" class="form-control form-control-user"name="datedebut"  id="" tabindex="2"  required>
+                                <input type="text" class="form-control form-control-user"name="saison"  id="saison" tabindex="2"  required>
                             </div>
                             <div class="col-sm-4">
                               <label>Date Début :</label>
-                                <input type="date" class="form-control form-control-user" id="ligue" name="ligue"
-                                    placeholder="Ligue"  tabindex="2" required>
+                                <input type="date" class="form-control form-control-user" id="datedebut" name="datedebut"
+                                     tabindex="2" required>
                             </div> 
                             <div class="col-sm-4">
                               <label>Date Fin :</label>
-                                <input type="date" class="form-control form-control-user" id="datefin" name="ligue"
-                                    placeholder="Ligue"  tabindex="2" required>
+                                <input type="date" class="form-control form-control-user" id="datefin" name="datefin"
+                                    tabindex="2" required>
                             </div> 
                          
                         </div>

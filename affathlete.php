@@ -23,14 +23,12 @@ $club = $_SESSION['club'];
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Liste des athletes</TITLE>
 </HEAD>
+
 <BODY>
 <div id="wrapper">
 <div id='side'></div>
-
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
 
 
 <!--<div align="center" class="style2"> Liste des Athletes</div>-->
