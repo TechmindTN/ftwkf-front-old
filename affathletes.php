@@ -7,6 +7,17 @@ $club = $_SESSION['club'];
   "http://www.w3.org/TR/html4/strict.dtd">
 <HTML lang="ar" dir="ltr">
 <HEAD>
+	<!-- Custom fonts for this template -->
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
 </HEAD>
@@ -29,6 +40,13 @@ body {
 }
 -->
 </style><BODY>
+<div id="wrapper">
+<div id="side"></div>
+
+
+<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+ </div>
+
 <div align="center" class="style2">Liste à Valider</div>
 <?php  
 	   	include('connect.php');
@@ -192,18 +210,18 @@ if ($ren <> "") {
 if ($ren <> "") {
  $phott = $row['photo'];
  ?>
-	  <td><img src="./photo/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></div></td>
-	  <td><img src="./photoid/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></div></td>
-	  <td><img src="./photobor/<?php echo $saison;?>/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></div></td>
-	  <td><img src="./photoeng/<?php echo $saison;?>/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></div></td>
+	  <td><img src="./photo/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></td>
+	  <td><img src="./photoid/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></td>
+	  <td><img src="./photobor/<?php echo $saison;?>/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></td>
+	  <td><img src="./photoeng/<?php echo $saison;?>/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></td>
       <?PHP 
 	  }
 else {
  ?>
-	  <td><img src="./photot/<?php echo $phott.".jpg";?>?<?php echo time(); ?>" width="33" height="50"></div></td>
-	  <td><img src="./photoidt/<?php echo $phott.".jpg";?>?<?php echo time(); ?>" width="33" height="50"></div></td>
-	  <td><img src="./photobor/<?php echo $saison;?>/<?php echo $phott.".jpg";?>?<?php echo time(); ?>" width="33" height="50"></div></td>
-	  <td><img src="./photoeng/<?php echo $saison;?>/<?php echo $phott.".jpg";?>?<?php echo time(); ?>" width="33" height="50"></div></td>
+	  <td><img src="./photot/<?php echo $phott.".jpg";?>?<?php echo time(); ?>" width="33" height="50"></td>
+	  <td><img src="./photoidt/<?php echo $phott.".jpg";?>?<?php echo time(); ?>" width="33" height="50"></td>
+	  <td><img src="./photobor/<?php echo $saison;?>/<?php echo $phott.".jpg";?>?<?php echo time(); ?>" width="33" height="50"></td>
+	  <td><img src="./photoeng/<?php echo $saison;?>/<?php echo $phott.".jpg";?>?<?php echo time(); ?>" width="33" height="50"></td>
       <?PHP 
 	  }
 	?> 
@@ -211,13 +229,15 @@ else {
    <?PHP   if (($club == "ADMIN")or($club == "Admin")or($club == "admin")) { ?>
      
         <div align="center"><a href ='licenceverif.php?naiss<?php echo "=$row[date_naiss]";?>&club<?php echo "=$row[club]";?>&club1<?php echo "=$club";?>&nom<?php echo "=$row[nom]";?>&prenom<?php echo "=$row[prenom]";?>&code<?php echo "=$row[n_lic]";?>&cin<?php echo "=$row[cin]";?>'><b>Verifier</b></a>
-      <?PHP  } else {
+     
+	 </div>
+	 <?PHP  } else {
 if (($club <> "CENTRE")and($club <> "Centre")and($club <> "centre") and ($club <> "NORD")and($club <> "Nord")and($club <> "nord") and ($club <> "SUD")and($club <> "Sud")and($club <> "sud")and($club <> "dtn")and($club <> "DTN")and($club <> "Dtn")) {		  
 		  
 		  
 		  ?>       
         <div align="center"><a href ='updathleteverif.php?code<?php echo "=$row[n_lic]";?>&club<?php echo "=$club";?>'><b>Modifier</b></a>
-	
+	</div>
       <?PHP  } }
 ?>	  
 	  
@@ -238,8 +258,23 @@ if (($club <> "CENTRE")and($club <> "Centre")and($club <> "centre") and ($club <
 ?> 
 </table>
 <p>&nbsp;</p>
+</div>
+<!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="assets/js/demo/datatables-demo.js"></script>
+    <script src="template.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,17 @@
+
+
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
   "http://www.w3.org/TR/html4/strict.dtd">
-<HTML lang="ar" dir="rtl">
+<html lang="en" >
 <HEAD>
+<link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
 </HEAD>
@@ -37,11 +47,6 @@ $results = mysql_query($querys,$connexion);
 $rows = mysql_fetch_assoc($results);
 
 ?>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-  "http://www.w3.org/TR/html4/strict.dtd">
-<HTML lang="ar" dir="rtl">
-<HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
 <script language="JavaScript" src="Calendar1-903.js" type="text/javascript"></script>
@@ -116,30 +121,18 @@ document.forms[0].submit();
 <meta name="Keywords" content="Popup Date Picker, Softricks Javascript Calendar" />
 <meta name="Description" content="Softricks Javascript Popup date picker calendar. The most versatile and feature-packed popup calendar for taking date inputs on the web." />
 </HEAD>
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style></HEAD>
+</HEAD>
 
 <BODY>
+<div id="wrapper">
 
+            <!-- Sidebar -->
+            <div id='side'></div>
+            <div class="row">
+            <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+ </div>
 
-<div align="center" class="style2">إضافة رياضيين</div>
+<div class="style2">إضافة رياضيين</div>
 <form action="addathlete1.php" method="post" enctype="multipart/form-data" name="MForm">
 
   <table width="100%" border="0">
@@ -229,6 +222,26 @@ body {
       <input type="submit" name="valider" id="valider" value="تسجيل">
   </p>
 </form>
+</div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="assets/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="assets/js/demo/chart-area-demo.js"></script>
+    <script src="assets/js/demo/chart-pie-demo.js"></script>
+    <script src="template.js"></script>
 </body>
 
 </html>

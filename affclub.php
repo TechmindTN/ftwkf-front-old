@@ -74,12 +74,12 @@ console_log($row1);
    <!-- Sidebar -->
 <div id='side'></div>
 
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+<div class="col-xl-1 col-lg-2 col-md-1 col-sm-1 col-xs-1     ">
  </div>
 
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column" >
 
             <!-- Main Content -->
             <div id="content">
@@ -165,7 +165,7 @@ console_log($row1);
                                             <th>Actions</th> 
                                          </tr>
                                     </tfoot>
-                                    <tbody>
+                                           </tbody>
 						
                                 </table>
                             </div>

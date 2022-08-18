@@ -17,30 +17,15 @@ $club = $_SESSION['club'];
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
 </HEAD>
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style><BODY>
+<BODY>
 <div id="wrapper">
 <div id='side'></div>
 
@@ -48,12 +33,18 @@ body {
  </div>
 
 
-<div align="center" class="style2"> Liste des Athletes</div>
+<!--<div align="center" class="style2"> Liste des Athletes</div>-->
   
 
+<div id="content">
 
-
- <div align="center">
+ <div align="center" class="container-fluid">
+ <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
+                        <div align="center" class="h3 mb-2 text-gray-800">Athletes</div>
+                        <p align="center"><a href="athletes1.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i>Ajout</a></p>
    <?PHP 
 	   	include('connect.php');
  $club1 = "";
@@ -76,8 +67,7 @@ $row01 = mysql_fetch_row($result01);
 
     if (($club=="admin")or($club=="ADMIN")or($club=="Admin") or ($club == "CENTRE")or($club == "Centre")or($club == "centre") or ($club == "NORD")or($club == "Nord")or($club == "nord") or ($club == "SUD")or($club == "Sud")or($club == "sud")) {
 	?>
-   <div align="center">
-   <a href ='liste.php'><b>Exporter</b></a>
+   <!--<a href ='liste.php'><b>Exporter</b></a>-->
    
    <?php
 	
@@ -92,17 +82,12 @@ $row1 = mysql_fetch_assoc($result1);
 	  ?>
    
    
- </div>
- <table width="100%" border="0" align="center"  class="text">
+ <form name="stat" method="post" action="">
 
-        <tr>
-          <td><form name="stat" method="post" action="">
+              
 
-              <table border="0" width="100%"  class="text" style="BORDER-LEFT: #EEEEEE 7px solid; BORDER-RIGHT: #EEEEEE 7px solid; BORDER-TOP: #EEEEEE 7px solid; BORDER-BOTTOM: #EEEEEE 7px solid">
-                <tr>
-
-                   <td align="right" width="25%"> Saison </td>
-   <td align="left" width="25%"><select name="sais" size="1" id="sais" tabindex="9" onChange="document.stat.submit();">
+                 Saison 
+   <select name="sais" size="1" id="sais" tabindex="9" class="custom-select col-sm-4" onChange="document.stat.submit();">
         <option><?php echo $saison1;?> </option>
                       <?php
 					   do { 
@@ -110,10 +95,7 @@ $row1 = mysql_fetch_assoc($result1);
                                       echo "<option >$res</option>";
                        } while ($row01 = mysql_fetch_assoc($result01));
 ?>
-      </select></td>
-                   <td align="right" width="25%"> Club </td>
-
-   <td align="left" width="25%"><select name="club" size="1" id="club" tabindex="9">
+      </select>Club <select class="custom-select col-sm-4" name="club" size="1" id="club" tabindex="9">
         <option><?php echo $club1;?> </option>
                       <?php
 					   do { 
@@ -121,25 +103,16 @@ $row1 = mysql_fetch_assoc($result1);
                                       echo "<option >$res</option>";
                        } while ($row1 = mysql_fetch_assoc($result1));
 ?>
-      </select></td>
-                   <td align="left" width="50%">
-<input name="ok" type="submit" class="Style4" value = "Rechercher">
-                  </td>
+      </select>
+<input name="ok" type="submit"  class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" value = "Rechercher">
+                 
 
 
-                </tr>
 
+          </form>
+     
 
-              </table>
-
-          </form></td>
-        </tr>
-</table>
-      </td>
-  </tr>
-</table>
-
- 
+ </div>
  
       <?PHP // } 
 	  $query ="SELECT * FROM club where club = '$club'";
@@ -166,7 +139,7 @@ $row = mysql_fetch_assoc($result);
 <br>
 <?PHP
 if (($club == "ADMIN")) {?>
-<p align="center"><a href="athletes1.php">Ajout</a></p>
+
 <?PHP
 }
 
@@ -174,9 +147,11 @@ if (($actif == "1") and ($club <> "ADMIN")) {?>
 <p align="center"><a href="athletes.php?club<?php echo "=$club";?>">Ajout</a>-----------<a href="rechathlete.php?club<?php echo "=$club";?>">Renouvellement</a></p>
 <?PHP
 }?>
-
-<table border="1" width="100%" id="table1">
-	<tr>
+<div class="card-body">
+                            <div class="table-responsive">
+<table class="table table-bordered" id="dataTable"  cellspacing="0"  width="100%" >
+	<thead>
+  <tr>
 	    <td ><div align="center"><strong>Saison </strong> </div> </td>
 		<td> <div align = "center"> <strong> N° Lic </strong> </div> </td>
 		<td> <div align = "center"> <strong> N° CIN </strong> </div> </td>
@@ -193,7 +168,9 @@ if (($actif == "1") and ($club <> "ADMIN")) {?>
 		<td> <div align = "center"> <strong> Photo </strong></div></td>
 		<td ><?php echo $totalRows; ?></td>
 		<td ></td>
-	</tr>
+    </tr>
+	</thead>
+  <tbody>
 <?php
 //$federation = $_SESSION['federation'];
 //$pers = $_SESSION['pers'];
@@ -239,7 +216,7 @@ $filename = './photo/'.$nphot.'.JPG';
 
 if (file_exists($filename)) {
  ?>
-      <img src="./photo/<?php echo $nphot.".JPG";?>?<?php echo time(); ?>" width="66" height="100"></div>
+      <img src="./photo/<?php echo $nphot.".JPG";?>?<?php echo time(); ?>" width="66" height="100">
 <?php } }
   
  ?>
@@ -252,7 +229,8 @@ if (file_exists($filename)) {
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
         <div align="center"><a href ='updathletes.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&club<?php echo "=$club";?>'><b>Modifier</b></a>
-      <?PHP  } ?>       
+     </div>
+        <?PHP  } ?>       
         
         </td>
         <td><?PHP 
@@ -268,9 +246,11 @@ if (file_exists($filename)) {
 
 
 ?> 
+</tbody>
 </table>
+</div>
+</div>
 <p>&nbsp;</p>
-
 <?php
 //if ((($pers == null)and ($federation != "المركز الوطني لإعداد النخبة") and ($federation != "المراكز الإقليمية")) or ($tache =="ممرن وطني")){ 
 ?>
@@ -286,22 +266,25 @@ if (($actif == "1")) {?>
 //} 
 ?>
 </div>
+</div>
+</div>
+</div>
 <!-- Bootstrap core JavaScript-->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Custom scripts for all pages-->
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
 
-<!-- Page level plugins -->
-<script src="assets/vendor/chart.js/Chart.min.js"></script>
-<!-- Page level custom scripts -->
-<script src="assets/js/demo/chart-area-demo.js"></script>
-<script src="assets/js/demo/chart-pie-demo.js"></script>
-<script src="assets/js/sb-admin-2.js"></script>
-<script src='template.js'></script>
+    <!-- Page level plugins -->
+    <script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="assets/js/demo/datatables-demo.js"></script>
+    <script src="template.js"></script>
 
 </body>
 
