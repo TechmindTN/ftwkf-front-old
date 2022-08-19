@@ -35,7 +35,7 @@ window.location.href="index.html";
 
     <style>
 .ml-1 {
-  margin-left: 15% !important;
+  margin-left: 11% !important;
 }</style>
 
 </style>
