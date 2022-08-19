@@ -31,25 +31,7 @@ window.location.href="index.html";
 <TITLE>Un document bilingue</TITLE>
 </HEAD>
 
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style>
+
 <BODY>
 <!-- Page Wrapper -->
     <div id="wrapper">
@@ -58,8 +40,14 @@ body {
    <!-- Sidebar -->
 <div id='side'></div>
 
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
+
+<div id="content"  style="margin-left:11%">
+<div class="container-fluid">
+<div class="card shadow mb-4">
+
+
+<div class="mb-4 ">
+<div class="card-header  py-3 d-sm-flex align-items-center justify-content-between mb-4">
 
 <?php
 
@@ -71,9 +59,22 @@ function diff_date($day , $month , $year , $day2 , $month2 , $year2){
 }
 
 ?>
-<div align="center" class="style2">Programme  des Competitions</div>
+<div align="center" class="h3 mb-2 text-gray-800">Programme  des Competitions</div>
+<?php
+if (($club == "ADMIN")){ 
+?>
+<p align="center"><a href="programme.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i>Ajout</a></p>
+<?php
+} 
+?>
+</div>
 
-<table border="1" width="100%" id="table1">
+<div class="card-body">
+
+<div class="table-responsive">
+<table class="table table-bordered" width="100%" id="dataTable" >
+	<thead>
 	<tr>
 		<td><div align="center"><strong>Competition</strong></div></td>
 		<td><div align="center"><strong>Discipline</strong></div></td>
@@ -84,6 +85,8 @@ function diff_date($day , $month , $year , $day2 , $month2 , $year2){
 		<td><div align="center"><strong>Deadline</strong></div></td>
 		<td><div align="center"><strong></strong></div></td>
 	</tr>
+</thead>
+<tbody>
 <?php
 //$federation = $_SESSION['federation'];
 //$pers = $_SESSION['pers'];
@@ -141,17 +144,18 @@ if (($jours1 >= 0)or(($club == "ADMIN")or($club == "Admin")or($club == "admin")o
 if (($jours1 >= 0) and ($actif ==1)){ 
 ?>
       <div align="center"><a href ='del.php?code<?php echo "=$row[id]";?>&cat<?php echo "=$row[age]";?>&comp<?php echo "=$row[action]";?>&dat<?php echo "=$date_debut1";?>&lieu<?php echo "=$row[lieu]";?>&type<?php echo "=$row[type]";?>&max<?php echo "=$row[max]";?>&min<?php echo "=$row[min]";?>&qualif<?php echo "=$row[qualif]";?>&sais<?php echo "=$row[saison]";?>&sport<?php echo "=$row[sport]";?>' ><b>Enregistrement</b></a>
+      </div>
 <?php }      
 
 if (($jours1 < 0)and(($club == "ADMIN")or($club == "DTN"))){ 
 ?>
-      <div align="center"><a href ='del.php?code<?php echo "=$row[id]";?>&cat<?php echo "=$row[age]";?>&comp<?php echo "=$row[action]";?>&dat<?php echo "=$date_debut1";?>&lieu<?php echo "=$row[lieu]";?>&type<?php echo "=$row[type]";?>&max<?php echo "=$row[max]";?>&min<?php echo "=$row[min]";?>&qualif<?php echo "=$row[qualif]";?>&sais<?php echo "=$row[saison]";?>' ><b>Consul</b></a>
+      <div align="center"><a href ='del.php?code<?php echo "=$row[id]";?>&cat<?php echo "=$row[age]";?>&comp<?php echo "=$row[action]";?>&dat<?php echo "=$date_debut1";?>&lieu<?php echo "=$row[lieu]";?>&type<?php echo "=$row[type]";?>&max<?php echo "=$row[max]";?>&min<?php echo "=$row[min]";?>&qualif<?php echo "=$row[qualif]";?>&sais<?php echo "=$row[saison]";?>' ><b>Consul</b></a></div>
 <?php }?>      
 
       </td>
       <?php if (($club == "ADMIN")){ ?>
 
-      <td><div align="center"><a href ='updprogramme.php?code<?php echo "=$row[id]";?>' ><b>Modification</b></a></td>
+      <td><div align="center"><a href ='updprogramme.php?code<?php echo "=$row[id]";?>' ><b>Modification</b></a></div></td>
 <?php	} ?> 
       
   </tr>
@@ -159,16 +163,15 @@ if (($jours1 < 0)and(($club == "ADMIN")or($club == "DTN"))){
 
 
 ?> 
+</tbody>
 </table>
-<p>&nbsp;</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
 
-<?php
-if (($club == "ADMIN")){ 
-?>
-<p align="center"><a href="programme.php">Ajout</a></p>
-<?php
-} 
-?>
 </div>
 
  <!-- Bootstrap core JavaScript-->

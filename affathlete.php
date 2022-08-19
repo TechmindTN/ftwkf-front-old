@@ -40,7 +40,7 @@ $club = $_SESSION['club'];
 
 <div id="content " class="ml-1">
 
- <div align="center" style="margin-left:11%" class="container-fluid">
+ <div align="center"  class="container-fluid">
 
  <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -241,7 +241,7 @@ if (($actif == "1")) {?>
         <td><?PHP 
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
-        <a href ='delathlete.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>'><img src="sup.png" width="16" height="16"></a>
+        <a  onclick="return confirm('Vous etes sure de supprimer ce Athlete??')" href ='delathlete.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>'><img src="sup.png" width="16" height="16"></a>
       <?PHP  } ?> 
      
         

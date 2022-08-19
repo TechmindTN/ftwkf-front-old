@@ -25,31 +25,19 @@ session_start();
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
 </HEAD>
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style><BODY>
+<BODY>
 <div id="wrapper">
 <div id='side'></div>
+<div id="content" class="col-10" style="margin-left:11%">
+<div class="container-fluid">
+<div class="card shadow mb-4" >
 
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
-<div align="center" class="style2">CATEGORIE D'AGE</div>
+
+<div class="mb-4 ">
+<div class="card-header  py-3 d-sm-flex align-items-center justify-content-between mb-4">
+<div align="center"  class="h3 mb-2 text-gray-800">Poids</div>
+<div align="center"><a href="param.php"class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i>Ajout</a></div>
 
  <?PHP 
 	   	include('connect.php');
@@ -83,17 +71,9 @@ $row1 = mysql_fetch_assoc($result1);
 	  ?>
      
  
- <table width="100%" border="0" align="center"  class="text">
+<form name="stat" method="post" action="">
 
-        <tr>
-          <td><form name="stat" method="post" action="">
-
-              <table border="0" width="100%"  class="text" style="BORDER-LEFT: #EEEEEE 7px solid; BORDER-RIGHT: #EEEEEE 7px solid; BORDER-TOP: #EEEEEE 7px solid; BORDER-BOTTOM: #EEEEEE 7px solid">
-                <tr>
-
-                   <td align="right" width="25%"> Age </td>
-
-   <td align="left" width="25%"><select name="cat" size="1" id="club" tabindex="9">
+              Age<select class="custom-select " name="cat" size="1" id="club" tabindex="9">
         <option><?php echo $cat1;?> </option>
                       <?php
 					   do { 
@@ -101,24 +81,13 @@ $row1 = mysql_fetch_assoc($result1);
                                       echo "<option >$res</option>";
                        } while ($row1 = mysql_fetch_assoc($result1));
 ?>
-      </select></td>
-                  <td align="left" width="50%">
-<input name="ok" type="submit" class="Style4" value = "Rechercher">
-                  </td>
+      </select>
+<input name="ok" type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" value = "Rechercher">
+                 
 
+          </form>
 
-                </tr>
-
-
-              </table>
-
-          </form></td>
-        </tr>
-</table>
-      </td>
-  </tr>
-</table>
-
+                      <!-- </div> -->
  
  
       <?PHP // } 
@@ -129,9 +98,12 @@ $totalRows = mysql_num_rows($result);
 $row = mysql_fetch_assoc($result);
 ?>       
 <br>
+</div>
+<div class="card-body">
 
-<table border="1" width="100%" id="table1">
-	<tr>
+<div class="table-responsive">
+<table class="table table-bordered" width="100%" id="dataTable" >
+	<thead><tr>
 		<td> <div align = "center"> <strong> Age </strong> </div> </td>
 	  	<td> <div align = "center"> <strong> Type </strong> </div> </td>
 	  	<td> <div align = "center"> <strong> Sexe </strong> </div> </td>
@@ -140,6 +112,8 @@ $row = mysql_fetch_assoc($result);
 		<td ><?php echo $totalRows; ?></td>
 		<td ></td>
 	</tr>
+                      </thead>
+                      <tbody>
 <?php
 
 
@@ -152,16 +126,17 @@ do {?>
 	  <td><div align="center"><?php echo $row['ordre'];?></div></td>
 	  <td><div align="center"><?php echo $row['poids'];?></div></td>
       <td><div align="center"><a href ='updparam.php?code<?php echo "=$row[id]";?>'><b>Modifier</b></a> </div></td>
-      <td><div align="center"><a href ='delparam.php?code<?php echo "=$row[id]";?>'><b>Supprimer</b></a> </div></td>
+      <td><div align="center"><a  onclick="return confirm('Vous etes sure de supprimer ce Poids??')" href ='delparam.php?code<?php echo "=$row[id]";?>'><b>Supprimer</b></a> </div></td>
 	</tr>
 <?php					}while	 ($row=mysql_fetch_assoc($result)); 
 
 
 ?> 
+</tbody>
 </table>
-<div align="center"><a href="param.php">Ajout</a></div>
 
-</div>
+</div></div></div></div></div>
+</div></div>
 
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
