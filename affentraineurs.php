@@ -28,10 +28,10 @@ window.location.href="index.html";
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Entraineurs</TITLE>
 <style>
   .ml-1{
-    margin-left:11% !important;
+    margin-left:7% !important;
   }
   </style>
 </HEAD>
@@ -48,7 +48,7 @@ window.location.href="index.html";
 <!-- <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 "> -->
  </div>
 
- <div id="content ">
+ <div id="content " class="ml-1">
 
 <div align="center" class="container-fluid ml-1 ">
 <!-- DataTales Example -->
