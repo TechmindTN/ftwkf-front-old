@@ -32,35 +32,6 @@ window.location.href="index.html";
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
 </HEAD>
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style><BODY>
-<!-- Page Wrapper -->
-    <div id="wrapper">
-
-
-   <!-- Sidebar -->
-<div id='side'></div>
-
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
-
 <?php
 	   	 
 
@@ -85,6 +56,18 @@ if (isset($_POST['test'])) {
 }
 
 ?>
+<BODY id="">
+<!-- Page Wrapper -->
+    <div id="wrapper">
+
+
+   <!-- Sidebar -->
+   <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
+
+
+
     <form name="stat" method="post" action="">
 <table width="100%" border="0" align="center"  class="text">
       <tr><input name="test" type="hidden" id="montant" tabindex="10" size="25" value="1">

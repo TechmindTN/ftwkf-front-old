@@ -35,15 +35,18 @@ window.location.href="index.html";
 
     <style>
 .ml-1 {
-  margin-left: 11% !important;
+  margin-left: 14% !important;
 }</style>
 
 </style>
-<BODY>
+<BODY id="page-top"> 
     <div></div>
 <div id="wrapper">
+<div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
 <div id="content-wrapper" class="d-flex flex-column ">
-<div id="side"></div>
+
 <div id="content" class="ml-1">
 <div class="container-fluid">
 <div class="card shadow mb-4">

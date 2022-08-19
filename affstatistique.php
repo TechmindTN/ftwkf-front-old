@@ -13,31 +13,40 @@ window.location.href="index.html";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
   "http://www.w3.org/TR/html4/strict.dtd">
-<HTML lang="ar" dir="rtl">
+<HTML lang="fr" dir="ltr">
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Statisques</TITLE>
+<link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </HEAD>
 <style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style><BODY>
 
+</style>
+<BODY id="page-top">
+<div id="wrapper">
+<div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
+            <div id="content-wrapper" class="d-flex flex-column ">
+
+<div id="content" class="ml-1">
+<div class="container-fluid">
+<div class="card shadow mb-4">
+<div class="mb-4 ">
+<div class="card-header  py-3 d-sm-flex align-items-center justify-content-between mb-4">
+<h1 class="h3 mb-2 text-gray-800">Statistiques </h1>
+                        <a href="club.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Ajouter</a>
+                                 
+                        </div>
 <?php
 	   	include('connect.php');
 
@@ -69,11 +78,13 @@ if (isset($_POST['ligue'])) {
   $ligue = (get_magic_quotes_gpc()) ? $_POST['ligue'] : addslashes($_POST['ligue']);
 }
 
-?>
-    <form name="stat" method="post" action="">
-<table width="100%" border="0" align="center"  class="text">
-      <tr>
-        <td align="center"><select name="sport" size="1" id="Discipline" tabindex="9">
+?> <table >
+
+<tr>
+<td><form name="stat" method="post" action="">
+<table >
+      <tr><td> sport </td>
+        <td><select name="sport" size="1" id="Discipline" tabindex="9"  class="custom-select ">
           <option><?php echo $sport;?></option>
           <option></option>
         <option>وشوكونغ فو</option>
@@ -84,8 +95,8 @@ if (isset($_POST['ligue'])) {
         <option>فوت وات فان فوداوو و الأنشطة التابعة</option>
         <option>هابكيدو</option>
         <option>الكيسندو</option></select></td>
-         <td align="center">Discipline</td>
-        <td align="center"><select name="ligue" size="1" id="club" tabindex="9">
+         <td >Discipline</td>
+        <td align="center"><select name="ligue" size="1" id="club" tabindex="9" class="custom-select ">
           <option><?php echo $ligue;?></option>
           <?php
 					   do { 
@@ -94,8 +105,8 @@ if (isset($_POST['ligue'])) {
                        } while ($rowl = mysql_fetch_assoc($resultl));
 ?>
         </select></td>
-       <td align="center">Ligue</td>
-        <td align="center"><select name="club11" size="1" id="club11" tabindex="9">
+       <td >Ligue</td>
+        <td ><select name="club11" size="1" id="club11" tabindex="9" class="custom-select ">
           <option></option>
           <option><?php echo $club11;?></option>
           <?php
@@ -105,8 +116,8 @@ if (isset($_POST['ligue'])) {
                        } while ($rowc = mysql_fetch_assoc($resultc));
 ?>
         </select></td>
-        <td align="center">Club</td>
-        <td align="center"><select name="saison" size="1" id="saison" tabindex="9">
+        <td>Club</td>
+        <td ><select name="saison" size="1" id="saison" tabindex="9" class="custom-select ">
           <option><?php echo $saison;?></option>
           <?php
 					   do { 
@@ -115,14 +126,16 @@ if (isset($_POST['ligue'])) {
                        } while ($row = mysql_fetch_assoc($result));
 ?>
         </select></td>
-        <td align="center">Saison</td>
+        <td >Saison</td>
+        <td><p align="center"> <input name="ok" type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" value = "Rechercher">
+        <input type=button value="Imprimer" onClick="window.print()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"></p>
+ </td>
+        
       </tr>
-      <tr>
-        <td colspan="8" align="center"><input name="ok" type="submit" class="Style4" value = "Rechercher"></td>
-      </tr>
+   
 
 </table>
-    </form>
+    </form></td></tr></table>
 <?php 
 $query0 ="delete from athletest";
 $result0 = mysql_query($query0,$connexion);
@@ -158,30 +171,32 @@ $rowagef = mysql_fetch_assoc($resultagef);
 
 
 ?>
-<p align="center"><input type=button value="Imprimer" onClick="window.print()"></p>
+<div class="card-body">
+
 <p style="page-break-before:always">
-<table width="100%" border="0">
+<table align="center"   >
   <tr>
     <td align="right" valign="middle" width="40%">الجامعة التونسية للوشو كونغ فو</td>
     <td align="center" width="20%"><img src="image/fond.png" alt="" width="60" height="60"></td>
     <td align="left" valign="middle" width="40%">FEDERATION TUNISIENNE DE WUSHU KUNG FU</td>
   </tr>
 </table>
-  
-  
+    
   
 <div align="center" class="style2">الإحصائيات</div><br>
 <div align="center" class="style2"><?php echo $sport;?></div><br>
 <div align="center"><?php echo $saison;?></div></p>
-<table border="1" width="100%" id="table1">
-	<tr>
-	    <td rowspan="2" ><div align="center"><strong>الموسم</strong></div></td>
-	    <td rowspan="2" ><div align="center"><strong>النادي</strong></div></td>
-	    <td rowspan="2" ><div align="center"><strong>الرابطة</strong></div></td>
+<div class="table-responsive">
+
+<table class="table table-bordered" id="dataTable">
+	<thead><tr>
+	    <td rowspan="2" ><strong>الموسم</strong></td>
+	    <td rowspan="2" ><strong>النادي</strong></td>
+	    <td rowspan="2" ><strong>الرابطة</strong></td>
 	    <td colspan="<?php echo $male;?>" align="center" ><strong>ذكور</strong></td>
 	    <td colspan="<?php echo $female;?>" align="center" ><strong>إناث</strong></td>
-	    <td rowspan="2" ><div align="center"><strong>المجموع العام</strong></div></td>
-	</tr>
+	    <td rowspan="2" ><strong>المجموع العام</strong></td>
+	</tr></thead>
 	<tr>
                       <?php
 					   do { 
@@ -324,13 +339,29 @@ $male = mysql_num_rows($result);
 
 
 
-</table>
+</table></div></div></div>
 <?php 
 ?>
 <p style="page-break-before:always">
 <p align="center"><input type=button value="Imprimer" onClick="window.print()"></p>
-<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p></div></div></div></div></div>
+<!-- Bootstrap core JavaScript-->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</body>
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="assets/js/demo/datatables-demo.js"></script>
+    <script src="template.js"></script>
+             
+  </body>
 
 </html>

@@ -74,7 +74,9 @@ $row = mysql_fetch_assoc($result);
 
 ?>
 <div id="wrapper">
-<div id='side'></div>
+<div class="navbar-nav sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
     <div class="container ml-1">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
@@ -89,10 +91,13 @@ $row = mysql_fetch_assoc($result);
                             <form class="user" action="addclub.php" method="post" enctype="multipart/form-data" name="MForm">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>club</label>
                                         <input type="text" class="form-control form-control-user" id="club"
                                         value ="<?php echo $row['club'];?>" name="club"> 
                                     </div>
                                     <div class="col-sm-6">
+                                    <label>ligue</label>
+
                                         <input type="text" class="form-control form-control-user" name="ligue" 
                                         id="ligue" tabindex="2"  value ="<?php echo $row['ligue'];?>">
                                     </div>
@@ -100,16 +105,17 @@ $row = mysql_fetch_assoc($result);
                              
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label>mot de passe</label>
+
                                         <input  class="form-control form-control-user"
                                         name="pw" type="text" id="pw" tabindex="1" size="25" value ="<?php echo $row['pw'];?>">
                                     </div>
                                     <div class="col-sm-6 ">
-                                      <div class="form-group row" >
+                                      
                                       <label >Actif</label>
                                          <div class="col-11"><input class="form-control form-control-user"
-                                        name="actif" type="text" id="pw" tabindex="1" value ="<?php echo $row['actif'];?>"></div>
+                                        name="actif" type="text" id="pw" tabindex="1" size="25" value ="<?php echo $row['actif'];?>"></div>
                                         </div> 
-                                    </div>
                                           
                                         <input name="cod" type="hidden" id="cod" tabindex="100" size="0" value ="<?php echo $row['id'];?>">
                                     

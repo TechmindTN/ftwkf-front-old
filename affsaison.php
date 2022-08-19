@@ -42,15 +42,16 @@ window.location.href="index.html";
 }</style>
 </head>
 
-<body id="page-top responsive">
+<body id="page-top ">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
 
    <!-- Sidebar -->
-<div id='side'></div>
-
+   <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">

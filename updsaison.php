@@ -80,7 +80,9 @@ $row = mysql_fetch_assoc($result);
 
 ?>
 <div id="wrapper">
-<div id='side'></div>
+<div class="navbar-nav  sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
  
 <div class="container ml-1">
 

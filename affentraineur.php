@@ -34,30 +34,24 @@ window.location.href="index.html";
   margin-left: 10% !important;
 }</style>
 </HEAD>
-<BODY>
+<BODY id="page-top">
 
 <!-- Page Wrapper -->
     <div id="wrapper">
 
 
    <!-- Sidebar -->
-<div id='side'></div>
+   <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
 
 
-
+            <div id="content-wrapper" class="d-flex flex-column ">
 
 <div id="content" class="ml-1">
 
  <div  class="container-fluid ">
 
-<!-- <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-1 ">
- </div>
-
-<div id="content" >
-
- <div align="center" style="margin-left:11%" class="container-fluid ">
-
- <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
                     <div align="center" class="h3 mb-2 text-gray-800">Entraineurs</div>

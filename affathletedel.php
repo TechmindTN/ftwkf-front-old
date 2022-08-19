@@ -60,7 +60,7 @@ if (($club=="ADMIN")or($club=="DTN")) {
 	 <div id="wrapper"> 
 <div id="side"></div>
 
-<div id="content-wrapper" style="margin-left:10%"  class="d-flex flex-column ">
+<div id="content-wrapper" style="margin-left:12%"  class="d-flex flex-column ">
 <div id='side'></div>
 
 
@@ -77,8 +77,10 @@ if (($club=="ADMIN")or($club=="DTN")) {
                                 <h1 class="h3 mb-2 text-gray-800">Athletes Non Valide</h1>
 
  <form name="stat" method="post" action="">
-
-             Saison <select class="custom-select col-sm-4" name="sais" size="1" id="sais" tabindex="9" onChange="document.stat.submit();">
+ <table>
+<tr><td>
+ Saison </td>
+ <td><select class="custom-select " name="sais" size="1" id="sais" tabindex="9" onChange="document.stat.submit();">
         <option><?php echo $saison1;?> </option>
                       <?php
 					   do { 
@@ -86,7 +88,8 @@ if (($club=="ADMIN")or($club=="DTN")) {
                                       echo "<option >$res</option>";
                        } while ($row01 = mysql_fetch_assoc($result01));
 ?>
-      </select><select class="custom-select col-sm-4" name="club" size="1" id="club" tabindex="9">
+      </select></td>
+      <td><select class="custom-select " name="club" size="1" id="club" tabindex="9">
         <option><?php echo $club1;?> </option>
                       <?php
 					   do { 
@@ -94,9 +97,9 @@ if (($club=="ADMIN")or($club=="DTN")) {
                                       echo "<option >$res</option>";
                        } while ($row1 = mysql_fetch_assoc($result1));
 ?>
-      </select>
-<input name="ok" type="submit" class="Style4" value = "Rechercher">
-                 
+      </select></td><td>
+<input name="ok" type="submit" class="btn btn-primary" value = "Rechercher">
+                      </td></tr></table>
           </form>
 
 <?php } ?>
@@ -119,7 +122,7 @@ if (($club=="ADMIN")or($club=="DTN")) {
 		<td> <div align = "center"> <strong> Ligue </strong> </div> </td>
 
 		<td> <div align = "center"> <strong> Discipline</strong> </div> </td>
-		<td> <div align = "center"> <strong>  </strong></div></td>
+		<td> <div align = "center"> <strong> Actions </strong></div></td>
     <td></td>
 	</tr>
                       </thead>

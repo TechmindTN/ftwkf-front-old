@@ -31,7 +31,7 @@ window.location.href="index.html";
 <TITLE>Entraineurs</TITLE>
 <style>
   .ml-1{
-    margin-left:7% !important;
+    margin-left:15% !important;
   }
   </style>
 </HEAD>
@@ -43,14 +43,16 @@ window.location.href="index.html";
 
 
    <!-- Sidebar -->
-<div id='side'></div>
+   <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
 
 <!-- <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 "> -->
- </div>
 
+<div id="content-wrapper" class="d-flex flex-column ">
  <div id="content " class="ml-1">
 
-<div align="center" class="container-fluid ml-1 ">
+<div class="container-fluid  ">
 <!-- DataTales Example -->
                    <div class="card shadow mb-4">
                    <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
@@ -118,9 +120,8 @@ $row001 = mysql_fetch_assoc($result001);
 		<td> <div align = "center"> <strong> Discipline</strong> </div> </td>
 		<td ><div align="center"><strong>Photo</strong></div></td>
 		<td ><div align="center"><strong>Diplome</strong></div></td>
-		<td ></td>
-		<td ></td>
-    <td></td>
+		<td align="center"><strong>Actions</strong></td>
+		
 	</tr>
  </thead>
  <tbody>
@@ -202,11 +203,7 @@ if ($etat == "1") {
       </div>
       <?PHP // } ?>       
         
-      </td>
-
-
-
-<td>
+     
    <?PHP   if (($club == "ADMIN")) { ?>
      
         <div align="center"><a href ='entraineurvalid.php?sais<?php echo "=$row[saison]";?>&type<?php echo "=$row[type]";?>&code<?php echo "=$row[n_lic]";?>'><b>Valider</b></a>
@@ -215,14 +212,10 @@ if ($etat == "1") {
 ?>	  
 	  
         
-      </td>
-
-
-
-      <td><?PHP 
+     <?PHP 
       //if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
-        <a href ='delentraineurs.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&fonct<?php echo "=$row[type]";?>'><img src="sup.png" width="16" height="16"></a>
+        <a  class="center" href ='delentraineurs.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&fonct<?php echo "=$row[type]";?>'><img src="sup.png" width="16" height="16"></a>
       <?PHP //  } ?>       
         
       </td>

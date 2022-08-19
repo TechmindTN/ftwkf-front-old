@@ -30,48 +30,39 @@ window.location.href="index.html";
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Paiement à valider</TITLE>
 </HEAD>
 <style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style><BODY>
+</style><BODY id="page-top">
 
 <!-- Page Wrapper -->
     <div id="wrapper">
 
 
    <!-- Sidebar -->
-<div id='side'></div>
+   <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
+           <div id="content-wrapper" class="d-flex flex-column ">
 
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
-
+<div id="content" class="ml-1">
+<div class="container-fluid">
+<div class="card shadow mb-4">
+<div class="mb-4 ">
+<div class="card-header  py-3 d-sm-flex align-items-center justify-content-between mb-4">
+<h1 class="h3 mb-2 text-gray-800">Paiement des Licences </h1>
+                        <a href="paiement.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Ajouter</a>
+                                 
+                        </div>
 <?php
 	   	 
 
 
 ?>
 
-<div align="center" class="style2">Paiement des Licences</div>
 <?php 
 ?>
-<p align="center"><a href="paiement.php">Ajout</a></p>
 <?php 
 
 if (($club <> "ADMIN")AND($club <> "Admin")AND($club <> "admin")){
@@ -81,27 +72,22 @@ $query ="SELECT * FROM paiement where saison = '$saison' and etat = 0";}
 $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 ?>
-
-<table border="1" width="100%" id="table1">
-	<tr>
-	    <td ><div align="center"><strong>Saison</strong></div></td>
-	    <td ><div align="center"><strong>Club</strong></div></td>
-	    <td ><div align="center"><strong>Montant</strong></div></td>
-	    <td ><div align="center"><strong>Date</strong></div></td>
-        <td ><div align="center"><strong>Decharge</strong></div></td>
-	    <td ><div align="center"><strong></strong></div></td>
-	</tr>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-bordered" id="dataTable" >
+	<thead><tr>
+	    <td ><strong>Saison</strong></td>
+	    <td >Club</strong></td>
+	    <td >Montant</strong></td>
+	    <td ><strong>Date</strong></td>
+        <td ><strong>Decharge</strong></td>
+	    <td ><strong>Actions</strong></td>
+	</tr></thead>
 <?php
-
-
-
-
-
-
 do {
 
 ?>
-
+<tbody>
 	<tr>
 
 	  <td><div align="center"><?php echo $row['saison'];?></div></td>
@@ -110,17 +96,20 @@ do {
 	  <td><div align="center"><?php echo $row['date'];?></div></td>
       <td><img src="./decharge<?php echo $row['id']. '.jpg';?>?<?php echo time(); ?>" width="33" height="50"></td>
       <td><a href ='delpai.php?code<?php echo "=$row[id]";?>'><img src="sup.png" width="16" height="16"></a>
-      <td><a href ='valpai.php?code<?php echo "=$row[id]";?>'>Valider</a>
+      <a href ='valpai.php?code<?php echo "=$row[id]";?>'>Valider</a>
         
         </td>
 
-  </tr>
+  </tr></tbody>
 <?php					}while	 ($row=mysql_fetch_assoc($result)); 
 
 
 ?> 
-</table>
+</table></div></div>
+</div> </div>
 </div>
+</div>
+
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

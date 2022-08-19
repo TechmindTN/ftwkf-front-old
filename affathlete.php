@@ -40,7 +40,7 @@ $club = $_SESSION['club'];
 
 <div id="content " class="ml-1">
 
- <div align="center" style="margin-left:11%" class="container-fluid">
+ <div align="center" class="container-fluid">
 
  <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -89,8 +89,8 @@ $row1 = mysql_fetch_assoc($result1);
 
               
 
-                 Saison 
-   <select name="sais" size="1" id="sais" tabindex="9" class="custom-select col-sm-4" onChange="document.stat.submit();">
+                <table><tr><td> Saison</td> 
+   <td><select name="sais" size="1" id="sais" tabindex="9" class="custom-select " onChange="document.stat.submit();">
         <option><?php echo $saison1;?> </option>
                       <?php
 					   do { 
@@ -98,7 +98,7 @@ $row1 = mysql_fetch_assoc($result1);
                                       echo "<option >$res</option>";
                        } while ($row01 = mysql_fetch_assoc($result01));
 ?>
-      </select>Club <select class="custom-select col-sm-4" name="club" size="1" id="club" tabindex="9">
+      </select></td><td>Club </td><td><select class="custom-select " name="club" size="1" id="club" tabindex="9">
         <option><?php echo $club1;?> </option>
                       <?php
 					   do { 
@@ -106,10 +106,10 @@ $row1 = mysql_fetch_assoc($result1);
                                       echo "<option >$res</option>";
                        } while ($row1 = mysql_fetch_assoc($result1));
 ?>
-      </select>
+      </select></td><td>
 <input name="ok" type="submit"  class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" value = "Rechercher">
                  
-
+<td></tr></table>
 
 
           </form>

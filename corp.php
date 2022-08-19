@@ -91,12 +91,12 @@ var phpvar="<?php echo strval($club); ?>";
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+<div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
             <!-- Sidebar -->
-            <div id='side'></div>
+            <div id='side'></div></div>
      
         <!-- Content Wrapper -->
-        <div id="content-wrapper" style="margin-left:11%" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content " class="ml-1">
