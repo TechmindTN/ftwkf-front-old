@@ -99,7 +99,7 @@ var phpvar="<?php echo strval($club); ?>";
         <div id="content-wrapper" style="margin-left:11%" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content " class="ml-1">
+            <div id="content " >
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">

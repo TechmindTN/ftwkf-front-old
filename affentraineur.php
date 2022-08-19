@@ -238,7 +238,7 @@ if ($etat == "1") {
         <?PHP 
       //if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
-       <div align="center"> <a   href ='delentraineur.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&fonct<?php echo "=$row[type]";?>'><b>Supprimer</b></a></div>
+       <div align="center"> <a onclick="return confirm('Vous etes sure de supprimer ce Entraineur??')"  href ='delentraineur.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&fonct<?php echo "=$row[type]";?>'><b>Supprimer</b></a></div>
       <?PHP //  } ?>       
         
         </td>

@@ -89,18 +89,18 @@ $row = mysql_fetch_assoc($result);
                             <form class="user" action="addclub.php" method="post" enctype="multipart/form-data" name="MForm">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="club"
+                                        <input type="text" class="form-control form-control-user" id="club" placeholder="Club"
                                         value ="<?php echo $row['club'];?>" name="club"> 
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" name="ligue" 
+                                        <input type="text" class="form-control form-control-user" name="ligue" placeholder="ligue"
                                         id="ligue" tabindex="2"  value ="<?php echo $row['ligue'];?>">
                                     </div>
                                 </div>
                              
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input  class="form-control form-control-user"
+                                        <input  class="form-control form-control-user" placeholder="Mot de passe"
                                         name="pw" type="text" id="pw" tabindex="1" size="25" value ="<?php echo $row['pw'];?>">
                                     </div>
                                     <div class="col-sm-6 ">
