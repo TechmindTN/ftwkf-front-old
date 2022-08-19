@@ -84,7 +84,7 @@ $saison = $row01[0];
             <div id='side'></div>
      
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" style="margin-left:11%" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">

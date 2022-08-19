@@ -39,7 +39,7 @@ window.location.href="index.html";
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <style>
 .ml-1 {
-  margin-left: 15% !important;
+  margin-left: 11% !important;
 }</style>
 </head>
 

@@ -55,7 +55,7 @@ body {
 <div id="wrapper">
 <div id="side"></div>
 
-<div class="container-fluid">
+<div style="margin-left:11%" class="container-fluid">
 <div class="card shadow mb-4">
 
 <?php
