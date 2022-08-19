@@ -28,20 +28,23 @@ window.location.href="index.html";
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Competitions</TITLE>
 </HEAD>
 
 
-<BODY>
-<!-- Page Wrapper -->
-    <div id="wrapper">
+<BODY id="page-top"> 
+<div id="wrapper">
 
+<!-- Page Wrapper -->
+<div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
 
    <!-- Sidebar -->
-<div id='side'></div>
+   <div id="content-wrapper" class="d-flex flex-column ">
 
 
-<div id="content"  style="margin-left:11%">
+<div id="content"  style="margin-left:1%">
 <div class="container-fluid">
 <div class="card shadow mb-4">
 
@@ -73,17 +76,17 @@ if (($club == "ADMIN")){
 <div class="card-body">
 
 <div class="table-responsive">
-<table class="table table-bordered" width="100%" id="dataTable" >
+<table class="table table-bordered"  id="dataTable" >
 	<thead>
 	<tr>
-		<td><div align="center"><strong>Competition</strong></div></td>
-		<td><div align="center"><strong>Discipline</strong></div></td>
-		<td><div align="center"><strong>Age</strong></div></td>
-		<td><div align="center"><strong>Type</strong></div></td>
-		<td><div align="center"><strong>Lieu</strong></div></td>
-		<td><div align="center"><strong>Date</strong></div></td>
-		<td><div align="center"><strong>Deadline</strong></div></td>
-		<td><div align="center"><strong></strong></div></td>
+		<th><strong>Competition</strong></th>
+		<th><strong>Discipline</strong></th>
+		<th><strong>Age</strong></th>
+		<th><strong>Type</strong></th>
+		<th><strong>Lieu</strong></th>
+		<th><strong>Date</strong></th>
+		<th><strong>Deadline</strong></th>
+		<th><strong>Actions</strong></th>
 	</tr>
 </thead>
 <tbody>
@@ -149,13 +152,13 @@ if (($jours1 >= 0) and ($actif ==1)){
 
 if (($jours1 < 0)and(($club == "ADMIN")or($club == "DTN"))){ 
 ?>
-      <div align="center"><a href ='del.php?code<?php echo "=$row[id]";?>&cat<?php echo "=$row[age]";?>&comp<?php echo "=$row[action]";?>&dat<?php echo "=$date_debut1";?>&lieu<?php echo "=$row[lieu]";?>&type<?php echo "=$row[type]";?>&max<?php echo "=$row[max]";?>&min<?php echo "=$row[min]";?>&qualif<?php echo "=$row[qualif]";?>&sais<?php echo "=$row[saison]";?>' ><b>Consul</b></a></div>
+      <div align="center"><a href ='del.php?code<?php echo "=$row[id]";?>&cat<?php echo "=$row[age]";?>&comp<?php echo "=$row[action]";?>&dat<?php echo "=$date_debut1";?>&lieu<?php echo "=$row[lieu]";?>&type<?php echo "=$row[type]";?>&max<?php echo "=$row[max]";?>&min<?php echo "=$row[min]";?>&qualif<?php echo "=$row[qualif]";?>&sais<?php echo "=$row[saison]";?>' ><b>Consultation</b></a></div>
 <?php }?>      
 
-      </td>
+      
       <?php if (($club == "ADMIN")){ ?>
 
-      <td><div align="center"><a href ='updprogramme.php?code<?php echo "=$row[id]";?>' ><b>Modification</b></a></div></td>
+     <div align="center"><a href ='updprogramme.php?code<?php echo "=$row[id]";?>' ><b>Modification</b></a></div></td>
 <?php	} ?> 
       
   </tr>
@@ -172,7 +175,7 @@ if (($jours1 < 0)and(($club == "ADMIN")or($club == "DTN"))){
       </div>
       </div>
 
-</div>
+</div></div></div>
 
  <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>

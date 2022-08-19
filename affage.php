@@ -23,23 +23,23 @@ session_start();
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Liste age</TITLE>
 </HEAD>
 <BODY>
 <div id="wrapper">
-<div id='side'></div>
+<div class="navbar-nav  sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
 
 
-
- <div id="content" class="col-10" style="margin-left:11%">
+ <div id="content" class="col-10" >
 <div class="container-fluid">
 <div class="card shadow mb-4">
 
-
 <div class="mb-4 ">
 <div class="card-header  py-3 d-sm-flex align-items-center justify-content-between mb-4">
-<div align="center" class="h3 mb-2 text-gray-800"> AGE</div>
-<div align="center"><a href="age.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+<div  class="h3 mb-2 text-gray-800"> Age</div>
+<a href="age.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Ajout</a></div>
 
 
@@ -83,16 +83,12 @@ $row = mysql_fetch_assoc($result);
 		<td> <div align = "center"> <strong> Max </strong> </div> </td>
 		<td> <div align = "center"> <strong> Prix </strong> </div> </td>
 		<td> <div align = "center"> <strong> Nom </strong> </div> </td>
-		<td ><?php echo $totalRows; ?></td>
-		<td></td>
+		<td ><div align = "center">  <strong>Actions</strong></div></td>
 	</tr>
 	</thead>
 	<tbody>
 <?php
-
-
 do {?>
-
 	<tr>
 	  <td><div align="center"><?php echo $row['sexe'];?></div></td>
 	  <td><div align="center"><?php echo $row['cat'];?></div></td>
@@ -100,8 +96,8 @@ do {?>
 	  <td><div align="center"><?php echo $row['sup'];?></div></td>
 	  <td><div align="center"><?php echo $row['prix'];?></div></td>
 	  <td><div align="center"><?php echo $row['nom'];?></div></td>
-      <td><div align="center"><a href ='updage.php?code<?php echo "=$row[code]";?>'><b>Modifier</b></a></div></td>
-      <td><div align="center"><a  onclick="return confirm('Vous etes sure de supprimer ce Age??')" href ='delage.php?code<?php echo "=$row[code]";?>'><b>Supprimer</b></a> </div></td>
+      <td><div align="center"><a href ='updage.php?code<?php echo "=$row[code]";?>'><b>Modifier</b></a></div>
+      <div align="center"><a  onclick="return confirm('Vous etes sure de supprimer ce Age??')" href ='delage.php?code<?php echo "=$row[code]";?>'><b>Supprimer</b></a> </div></td>
 	</tr>
 <?php					}while	 ($row=mysql_fetch_assoc($result)); 
 

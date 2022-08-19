@@ -23,22 +23,22 @@ session_start();
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Liste de Poids</TITLE>
 </HEAD>
 <BODY>
 <div id="wrapper">
-<div id='side'></div>
-<div id="content" class="col-10" style="margin-left:11%">
+<div class="navbar-nav sidebar sidebar-dark accordion">
+<div id='side'></div></div>
+<div id="content" class="col-10" >
 <div class="container-fluid">
 <div class="card shadow mb-4" >
 
-
 <div class="mb-4 ">
 <div class="card-header  py-3 d-sm-flex align-items-center justify-content-between mb-4">
-<div align="center"  class="h3 mb-2 text-gray-800">Poids</div>
-<div align="center"><a href="param.php"class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+<table>
+<h1 class="h3 mb-2 text-gray-800">Poids </h1>
+<a href="param.php"class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i>Ajout</a></div>
-
  <?PHP 
 	   	include('connect.php');
 // $sport1 = "";
@@ -53,27 +53,20 @@ if (isset($_POST['cat'])) {
 //if (isset($_POST['typ'])) {
 //  $type1 = (get_magic_quotes_gpc()) ? $_POST['typ'] : addslashes($_POST['typ']);
 //}
-
 //$query01 ="SELECT sport FROM param group by sport order by sport";
 //$result01 = mysql_query($query01,$connexion);
-//$row01 = mysql_fetch_row($result01);
-
-
-	
+//$row01 = mysql_fetch_row($result01);	
 $query1 ="SELECT cat from param group by cat order by cat";	 
 $result1 = mysql_query($query1,$connexion);
 $row1 = mysql_fetch_assoc($result1);
-
 //$query2 ="SELECT type from param where sport = '$sport1' group by type order by type";	 
 //$result2 = mysql_query($query2,$connexion);
 //$row2 = mysql_fetch_assoc($result2);
+	  ?>  
 
-	  ?>
-     
- 
 <form name="stat" method="post" action="">
-
-              Age<select class="custom-select " name="cat" size="1" id="club" tabindex="9">
+<table><tr>
+              <td>Age</td><td><select class="custom-select " name="cat" size="1" id="club" tabindex="9">
         <option><?php echo $cat1;?> </option>
                       <?php
 					   do { 
@@ -81,11 +74,18 @@ $row1 = mysql_fetch_assoc($result1);
                                       echo "<option >$res</option>";
                        } while ($row1 = mysql_fetch_assoc($result1));
 ?>
-      </select>
-<input name="ok" type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" value = "Rechercher">
+      </select></td><td>
+<input name="ok" type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" value = "Rechercher"></td>
                  
 
-          </form>
+          </form></td>
+        </tr>
+</table>
+      </td>
+  </tr>
+</table>
+                    </div>
+
 
                       <!-- </div> -->
  
@@ -104,13 +104,12 @@ $row = mysql_fetch_assoc($result);
 <div class="table-responsive">
 <table class="table table-bordered" width="100%" id="dataTable" >
 	<thead><tr>
-		<td> <div align = "center"> <strong> Age </strong> </div> </td>
-	  	<td> <div align = "center"> <strong> Type </strong> </div> </td>
-	  	<td> <div align = "center"> <strong> Sexe </strong> </div> </td>
-		<td> <div align = "center"> <strong> Ordre </strong> </div> </td>
-		<td> <div align = "center"> <strong> Poids </strong> </div> </td>
-		<td ><?php echo $totalRows; ?></td>
-		<td ></td>
+		<th> <div align = "center"> <strong> Age </strong> </div> </th>
+	  	<th> <div align = "center"> <strong> Type </strong> </div> </th>
+	  	<th> <div align = "center"> <strong> Sexe </strong> </div> </th>
+		<th> <div align = "center"> <strong> Ordre </strong> </div> </th>
+		<th> <div align = "center"> <strong> Poids </strong> </div> </th>
+		<th><div align = "center"> <strong>Actions</strong></div></th>
 	</tr>
                       </thead>
                       <tbody>
@@ -125,8 +124,8 @@ do {?>
 	  <td><div align="center"><?php echo $row['sexe'];?></div></td>
 	  <td><div align="center"><?php echo $row['ordre'];?></div></td>
 	  <td><div align="center"><?php echo $row['poids'];?></div></td>
-      <td><div align="center"><a href ='updparam.php?code<?php echo "=$row[id]";?>'><b>Modifier</b></a> </div></td>
-      <td><div align="center"><a  onclick="return confirm('Vous etes sure de supprimer ce Poids??')" href ='delparam.php?code<?php echo "=$row[id]";?>'><b>Supprimer</b></a> </div></td>
+      <td><div align="center"><a href ='updparam.php?code<?php echo "=$row[id]";?>'><b>Modifier</b></a> </div>
+      <div align="center"><a  onclick="return confirm('Vous etes sure de supprimer ce Poids??')" href ='delparam.php?code<?php echo "=$row[id]";?>'><b>Supprimer</b></a> </div></td>
 	</tr>
 <?php					}while	 ($row=mysql_fetch_assoc($result)); 
 
