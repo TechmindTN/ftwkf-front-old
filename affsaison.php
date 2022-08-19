@@ -115,7 +115,7 @@ do {?>
 	  <td><?php echo $row['actif'];?></td>
       <td><a href ='saiactif.php?code<?php echo "=$row[code]";?>'><b>Actif</b></a></td>
       <td><div align="center"><a href ='updsaison.php?code<?php echo "=$row[code]";?>'><b>Modifier</b></a></div>
-      <div align="center"><a href ='delsaison.php?code<?php echo "=$row[code]";?>'><b>Supprimer</b></a></div></td>
+      <div align="center"><a onclick="return confirm('Vous etes sure de supprimer cette saison??')" href ='delsaison.php?code<?php echo "=$row[code]";?>'><b>Supprimer</b></a></div></td>
    </tr>
 <?php					}while	 ($row=mysql_fetch_assoc($result)); 
 

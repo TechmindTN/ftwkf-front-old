@@ -241,7 +241,7 @@ if (($actif == "1")) {?>
         <td><?PHP 
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
-        <a href ='delathlete.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>'><img src="sup.png" width="16" height="16"></a>
+        <a  onclick="return confirm('Vous etes sure de supprimer ce Athlete??')" href ='delathlete.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>'><img src="sup.png" width="16" height="16"></a>
       <?PHP  } ?> 
      
         

@@ -167,7 +167,7 @@ do {
           <td><?PHP 
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
-        <a href ='delathletedel.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>'><img src="sup.png" width="16" height="16"></a>
+        <a  onclick="return confirm('Vous etes sure de supprimer ce Athlete??')" href ='delathletedel.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>'><img src="sup.png" width="16" height="16"></a>
       <?PHP  } ?>       
         
         </td>

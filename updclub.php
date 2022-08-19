@@ -99,6 +99,11 @@ $row = mysql_fetch_assoc($result);
                                     <label>ligue</label>
 
                                         <input type="text" class="form-control form-control-user" name="ligue" 
+                                        <input type="text" class="form-control form-control-user" id="club" placeholder="Club"
+                                        value ="<?php echo $row['club'];?>" name="club"> 
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" name="ligue" placeholder="ligue"
                                         id="ligue" tabindex="2"  value ="<?php echo $row['ligue'];?>">
                                     </div>
                                 </div>
@@ -108,6 +113,7 @@ $row = mysql_fetch_assoc($result);
                                     <label>mot de passe</label>
 
                                         <input  class="form-control form-control-user"
+                                        <input  class="form-control form-control-user" placeholder="Mot de passe"
                                         name="pw" type="text" id="pw" tabindex="1" size="25" value ="<?php echo $row['pw'];?>">
                                     </div>
                                     <div class="col-sm-6 ">

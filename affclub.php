@@ -151,7 +151,7 @@ do {?>
 	  <td><div align="center"><?php echo $row['actif'];?></div></td>
     
     
-      <td><div align="center"><?php if ($row['club'] <> "ADMIN") {?><a href ='delclub.php?code<?php echo "=$row[id]";?>'><b>Supprimer</b></a><?php }?>
+      <td><div align="center"><?php if ($row['club'] <> "ADMIN") {?><a href ='delclub.php?code<?php echo "=$row[id]";?>'  onclick="return confirm('Vous etes sure de supprimer ce club??')"><b>Supprimer</b></a><?php }?>
       <div align="center"><a href ='updclub.php?code<?php echo "=$row[id]";?>'><b>Modifier</b></a></td>
    </tr>
 <?php					}while	 ($row=mysql_fetch_assoc($result)); 
