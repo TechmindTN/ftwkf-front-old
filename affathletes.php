@@ -21,33 +21,32 @@ $club = $_SESSION['club'];
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Un document bilingue</TITLE>
 </HEAD>
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style><BODY>
+<BODY>
 <div id="wrapper">
 <div id="side"></div>
 
 
-<div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
- </div>
+<!-- <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
+ </div> -->
 
-<div align="center" class="style2">Liste à Valider</div>
+ <!-- Content Wrapper -->
+        <div id="content-wrapper" style="margin-left:11%" class="d-flex flex-column ">
+<div id='side'></div>
+
+
+
+
+
+            <!-- Main Content -->
+            <div id="content" class="ml-1">
+            <div class="container-fluid">
+                            
+                            <!-- DataTales Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
+                                <h1 class="h3 mb-2 text-gray-800">Athletes a valider</h1>
+                               
+
 <?php  
 	   	include('connect.php');
 $query1 ="SELECT saison FROM saison where actif = 1";
@@ -77,14 +76,8 @@ $result2 = mysql_query($query2,$connexion);
 $row2 = mysql_fetch_assoc($result2);
 
 	  ?>
- <table width="100%" border="0" align="center"  class="text">
-
-        <tr>
-          <td><form name="stat" method="post" action="">
-              <table border="0" width="100%"  class="text" style="BORDER-LEFT: #EEEEEE 7px solid; BORDER-RIGHT: #EEEEEE 7px solid; BORDER-TOP: #EEEEEE 7px solid; BORDER-BOTTOM: #EEEEEE 7px solid">
-                <tr>
-   <td align="right" width="25%">Club</td>
-   <td align="right" width="25%"><select name="club" size="1" id="club" tabindex="9">
+ <form name="stat" method="post" action="">
+              Club<select class="custom-select col-sm-4" name="club" size="1" id="club" tabindex="9">
      <option><?php echo $club1;?></option>
      <?php
 					   do { 
@@ -92,9 +85,7 @@ $row2 = mysql_fetch_assoc($result2);
                                       echo "<option >$res</option>";
                        } while ($row1 = mysql_fetch_assoc($result1));
 ?>
-   </select></td>
-   <td align="right" width="50%">Age</td>
-   <td align="right" width="50%"><select name="age" size="1" id="club2" tabindex="9">
+   </select>Age<select class="custom-select col-sm-4" name="age" size="1" id="club2" tabindex="9">
      <option><?php echo $age1;?></option>
      <?php
 					   do { 
@@ -102,19 +93,10 @@ $row2 = mysql_fetch_assoc($result2);
                                       echo "<option >$res</option>";
                        } while ($row2 = mysql_fetch_assoc($result2));
 ?>
-   </select></td>
-                   <td align="left" width="50%">
-<input name="ok" type="submit" class="Style4" value = "Rechercher">
-                  </td>
-
-                </tr>
-              </table>
-          </form></td>
-        </tr>
-</table>
-      </td>
-  </tr>
-</table>
+   </select>
+<input name="ok" type="submit" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" value = "Rechercher">
+                  
+          </form>
 
 <?php } 
 $query ="SELECT club FROM club where club = '$club'";
@@ -138,10 +120,11 @@ $totalRows = mysql_num_rows($result);
 $row = mysql_fetch_assoc($result);
 ?>
 
-
-
-<table border="1" width="100%" id="table1">
-	<tr>
+</div>
+<div class="card-body">
+                            <div class="table-responsive">
+<table border="1" class="table table-bordered" width="100%" id="dataTable">
+	<thead>
 	<tr>
 	    <td ><div align = "center"> <strong> Saison </strong> </div> </td>
 		<td> <div align = "center"> <strong> N° Lic </strong> </div> </td>
@@ -163,6 +146,8 @@ $row = mysql_fetch_assoc($result);
 		<td ><?php echo $totalRows; ?></td>
 		<td ></td>
 	</tr>
+  </thead>
+  <tbody>
 <?php
 //$federation = $_SESSION['federation'];
 //$pers = $_SESSION['pers'];
@@ -256,8 +241,10 @@ if (($club <> "CENTRE")and($club <> "Centre")and($club <> "centre") and ($club <
 
 
 ?> 
+</tbody>
 </table>
-<p>&nbsp;</p>
+</div></div></div></div></div>
+</div>
 </div>
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>

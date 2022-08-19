@@ -45,9 +45,18 @@ window.location.href="index.html";
 
 
 
+
 <div id="content" class="ml-1">
 
  <div  class="container-fluid ">
+
+<!-- <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-1 ">
+ </div>
+
+<div id="content" >
+
+ <div align="center" style="margin-left:11%" class="container-fluid ">
+
  <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">

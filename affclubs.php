@@ -36,7 +36,13 @@ window.location.href="index.html";
 }</style>
 </HEAD>
 
-<BODY >
+<BODY>
+<div id="wrapper">
+<div id="side"></div>
+
+<div style="margin-left:11%" class="container-fluid">
+<div class="card shadow mb-4">
+
 <?php
 include('connect.php');
 

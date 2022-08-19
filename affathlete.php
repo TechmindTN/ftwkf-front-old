@@ -40,7 +40,8 @@ $club = $_SESSION['club'];
 
 <div id="content " class="ml-1">
 
- <div  class="container-fluid">
+ <div align="center" style="margin-left:11%" class="container-fluid">
+
  <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
