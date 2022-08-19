@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Ajout club</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,8 +32,6 @@ function submitdnld() {
 }
 </script>
 <script language="JavaScript" type="text/javascript">
-<!--
-
 
 function MM_reloadPage(init) {  //reloads the window if Nav4 resized
   if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
@@ -48,12 +46,17 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 }
 //-->
 </script>
+<style>
+.ml-1 {
+  margin-left: 20% !important;
+}</style>
 </head>
 
 <body >
+<div id="wrapper">
+<div id="side"></div>
 
-    <div class="container">
-
+<div class="container ml-1">
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
@@ -70,11 +73,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                                         <input type="text" class="form-control form-control-user" id="club" name="club"
                                             placeholder="Club" tabindex="1" required>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="ligue" name="ligue"
                                             placeholder="Ligue"  tabindex="2" required>
                                     </div> 
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
                                     <input type="password" class="form-control form-control-user"
                                             id="pw" placeholder="Mot de passe" name="pw" tabindex="1" required>
                                     </div> 
@@ -107,7 +110,8 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
-
+    <script src="template.js"></script>
+</div></div>
 </body>
 
 </html>

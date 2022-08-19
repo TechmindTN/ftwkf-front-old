@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Modification saison</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -53,25 +53,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 </script>
 
 
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
 
-</style>
+<style>
+.ml-1 {
+  margin-left: 20% !important;
+}</style>
 </HEAD>
 
 <BODY>
@@ -96,24 +82,10 @@ $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 
 ?>
-
- <form action="addsaison.php" method="post" enctype="multipart/form-data" name="MForm">
-  <table width="100%" border="0">
-    <tr>
-      <td width="114" align="right">Saison</td>
-      <td width="153" align="right"><input name="saison" type="text" id="club" tabindex="3" size="25" value ="<?php echo $row['saison'];?>"></td>
-      <td width="120" align="right">Date Début</td>
-      <td width="202" align="right"><input name="datedebut" type="date" id="ligue" tabindex="2" size="25" value ="<?php echo $row['datedebut'];?>"></td>
-      <td width="116" align="right">Date Fin</td>
-      <td width="150" align="right"><input name="datefin" type="date" id="pw" tabindex="1" size="25" value ="<?php echo $row['datefin'];?>"></td>
-    </tr>
-    </table>
-  <p align="center">
-      <input name="cod" type="hidden" id="cod" tabindex="100" size="0" value ="<?php echo $row['code'];?>">
-      <input type="submit" name="valider" id="valider" value="Valider">
-  </p>
-</form>
-<div class="container">
+<div id="wrapper">
+<div id='side'></div>
+ 
+<div class="container ml-1">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
@@ -126,41 +98,37 @@ $row = mysql_fetch_assoc($result);
                             </div>
                             <form action="addsaison.php" method="post" enctype="multipart/form-data" name="MForm">
                                 <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
                                       <label>Saison : </label>
                                         <input name="saison" type="text" id="club" tabindex="3" class="form-control form-control-user"  value ="<?php echo $row['saison'];?>" >
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
                                     <label>Date début : </label>
                                         <input name="datedebut" type="date" id="ligue" tabindex="2"   class="form-control form-control-user" value ="<?php echo $row['datedebut'];?>">
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                
+                               
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label>Date fin : </label>
                                     <input  class="form-control form-control-user"
                                     name="datefin" type="date" id="pw" tabindex="1" size="25" value ="<?php echo $row['datefin'];?>">
                                     </div>
-                                    <div class="col-sm-6 text-center container my-1 ">
-                    
-            <button type="submit" class="btn btn-danger">Modifier</button>
-                                    </div>
+                                  
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                   
+                           <br>
                                     </div>
                                   
                                           
                                         <input name="cod" type="hidden" id="cod" tabindex="100" size="0" value ="<?php echo $row['id'];?>">
                                     
-                                </div>
                                
                                 <div class="container my-3 ">
-        <div class="col-md-12 text-center">
+               <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-danger">Modifier</button>
-        </div>
-    </div>
+                     </div>
+             </div>
                             </form>
                
                            
@@ -170,7 +138,7 @@ $row = mysql_fetch_assoc($result);
             </div>
         </div>
 
-    </div>
+    </div></div>
 
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -181,6 +149,8 @@ $row = mysql_fetch_assoc($result);
 
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
+    <script src="template.js"></script>
+
 </body>
 
 </html>

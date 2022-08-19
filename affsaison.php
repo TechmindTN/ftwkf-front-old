@@ -36,7 +36,10 @@ window.location.href="index.html";
 
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <style>
+.ml-1 {
+  margin-left: 15% !important;
+}</style>
 </head>
 
 <body id="page-top responsive">
@@ -53,7 +56,7 @@ window.location.href="index.html";
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" class="ml-1">
 
             <form name="stat" method="post" action="">
 

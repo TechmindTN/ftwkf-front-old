@@ -30,25 +30,10 @@ window.location.href="index.html";
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-<style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-
-</style>
+    <style>
+.ml-1 {
+  margin-left: 15% !important;
+}</style>
 </HEAD>
 
 <BODY>
@@ -88,7 +73,15 @@ $rows = mysql_fetch_assoc($results);
 
 
 ?>
-<div class="mb-4">
+<div id="wrapper">
+<div id="content-wrapper" class="d-flex flex-column ">
+<div id="side"></div>
+<div id="content" class="ml-1">
+<div class="container-fluid">
+<div class="card shadow mb-4">
+
+
+<div class="mb-4 ">
 
 
 <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
@@ -202,8 +195,8 @@ do {?>
 
 
 </div>
-</div>
-</div>
+</div></div>
+</div></div>
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

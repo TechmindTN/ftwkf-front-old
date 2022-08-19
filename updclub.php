@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Modification club</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,8 +32,6 @@ function submitdnld() {
 }
 </script>
 <script language="JavaScript" type="text/javascript">
-<!--
-
 
 function MM_reloadPage(init) {  //reloads the window if Nav4 resized
   if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
@@ -48,6 +46,10 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 }
 //-->
 </script>
+<style>
+.ml-1 {
+  margin-left: 20% !important;
+}</style>
 </head>
 
 <body >
@@ -71,7 +73,9 @@ $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 
 ?>
-    <div class="container">
+<div id="wrapper">
+<div id='side'></div>
+    <div class="container ml-1">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
@@ -101,8 +105,8 @@ $row = mysql_fetch_assoc($result);
                                     </div>
                                     <div class="col-sm-6 ">
                                       <div class="form-group row" >
-                                      <label for="inputPassword" class="col-sm-2 col-form-label">Actif</label>
-                                         <div class="col-10"><input class="form-control form-control-user"
+                                      <label >Actif</label>
+                                         <div class="col-11"><input class="form-control form-control-user"
                                         name="actif" type="text" id="pw" tabindex="1" value ="<?php echo $row['actif'];?>"></div>
                                         </div> 
                                     </div>
@@ -125,7 +129,7 @@ $row = mysql_fetch_assoc($result);
             </div>
         </div>
 
-    </div>
+    </div></div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -136,6 +140,7 @@ $row = mysql_fetch_assoc($result);
 
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
+    <script src="template.js"></script>
 
 </body>
 
