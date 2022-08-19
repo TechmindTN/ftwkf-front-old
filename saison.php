@@ -78,9 +78,11 @@ window.location.href="index.html";
 
 
 
-<body>
+<body id="page-top">
 <div id="wrapper">
-<div id='side'></div>
+<div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
 
 <div class="container ml-1">
 

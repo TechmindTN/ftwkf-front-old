@@ -52,10 +52,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 }</style>
 </head>
 
-<body >
+<body id="page-top">
 <div id="wrapper">
-<div id="side"></div>
-
+<div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
 <div class="container ml-1">
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
@@ -100,7 +101,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
         </div>
 
     </div>
-
+    </div></div></div>
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -111,7 +112,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
     <script src="template.js"></script>
-</div></div>
+
 </body>
 
 </html>

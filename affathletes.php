@@ -19,11 +19,13 @@ $club = $_SESSION['club'];
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Liste athletes à valider</TITLE>
 </HEAD>
-<BODY>
+<BODY id="page-top">
 <div id="wrapper">
-<div id="side"></div>
+<div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
 
 
 <!-- <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 ">
@@ -31,14 +33,13 @@ $club = $_SESSION['club'];
 
  <!-- Content Wrapper -->
         <div id="content-wrapper" style="margin-left:11%" class="d-flex flex-column ">
-<div id='side'></div>
 
 
 
 
 
             <!-- Main Content -->
-            <div id="content" class="ml-1">
+            <div id="content" >
             <div class="container-fluid">
                             
                             <!-- DataTales Example -->
@@ -123,7 +124,7 @@ $row = mysql_fetch_assoc($result);
 </div>
 <div class="card-body">
                             <div class="table-responsive">
-<table border="1" class="table table-bordered" width="100%" id="dataTable">
+<table  class="table table-bordered" width="100%" id="dataTable">
 	<thead>
 	<tr>
 	    <td ><div align = "center"> <strong> Saison </strong> </div> </td>
@@ -143,8 +144,7 @@ $row = mysql_fetch_assoc($result);
 		<td ><div align = "center"> <strong> Identité</strong></div></td>
 		<td ><div align = "center"> <strong> Fiche Medical</strong></div></td>
 		<td ><div align = "center"> <strong> Eng Parental</strong></div></td>
-		<td ><?php echo $totalRows; ?></td>
-		<td ></td>
+		<td >Actions</td>
 	</tr>
   </thead>
   <tbody>
@@ -170,7 +170,7 @@ else {$phott =$row['n_lic']; }
 
 if ($ren <> "") {
 ?>
-	<tr bgcolor="#00FF66">
+	<tr bgcolor="#088C20" style="color:#fff">
 <?php }else {?>
 	<tr>
 <?php }?>
@@ -213,7 +213,7 @@ else {
 <td>
    <?PHP   if (($club == "ADMIN")or($club == "Admin")or($club == "admin")) { ?>
      
-        <div align="center"><a href ='licenceverif.php?naiss<?php echo "=$row[date_naiss]";?>&club<?php echo "=$row[club]";?>&club1<?php echo "=$club";?>&nom<?php echo "=$row[nom]";?>&prenom<?php echo "=$row[prenom]";?>&code<?php echo "=$row[n_lic]";?>&cin<?php echo "=$row[cin]";?>'><b>Verifier</b></a>
+        <div align="center" ><a style="color:#000" href ='licenceverif.php?naiss<?php echo "=$row[date_naiss]";?>&club<?php echo "=$row[club]";?>&club1<?php echo "=$club";?>&nom<?php echo "=$row[nom]";?>&prenom<?php echo "=$row[prenom]";?>&code<?php echo "=$row[n_lic]";?>&cin<?php echo "=$row[cin]";?>'><b>Verifier</b></a>
      
 	 </div>
 	 <?PHP  } else {
@@ -221,17 +221,16 @@ if (($club <> "CENTRE")and($club <> "Centre")and($club <> "centre") and ($club <
 		  
 		  
 		  ?>       
-        <div align="center"><a href ='updathleteverif.php?code<?php echo "=$row[n_lic]";?>&club<?php echo "=$club";?>'><b>Modifier</b></a>
+        <div align="center"><a  style="color:#000" href ='updathleteverif.php?code<?php echo "=$row[n_lic]";?>&club<?php echo "=$club";?>'><b>Modifier</b></a>
 	</div>
       <?PHP  } }
 ?>	  
 	  
         
-        </td>
-        <td><?PHP 
+        <?PHP 
       if ($club==$row['club']) { ?>
      
-        <a href ='delathletes.php?code<?php echo "=$row[n_lic]";?>&club<?php echo "=$club";?>'><img src="sup.png" width="16" height="16"></a>
+        <a  style="color:#000"href ='delathletes.php?code<?php echo "=$row[n_lic]";?>&club<?php echo "=$club";?>'><img src="sup.png" width="16" height="16"></a>
       <?PHP  } ?>       
         
         </td>
