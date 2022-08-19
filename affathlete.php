@@ -227,8 +227,14 @@ if (file_exists($filename)) {
       <td><?PHP 
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
-        <div align="center"><a href ='updathletes.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&club<?php echo "=$club";?>'><b>Modifier</b></a>
-     </div>
+        <div align="center">
+          <a href ='updathletes.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&club<?php echo "=$club";?>'><b>Modifier</b></a>
+          <?PHP
+if (($actif == "1")) {?>
+<p align="center"><a href="athletes.php">Ajout</a>-----------<a href="rechathlete.php">Renouvellementl</a></p>
+<?PHP
+}?> 
+        </div>
         <?PHP  } ?>       
         
         </td>
@@ -236,7 +242,8 @@ if (file_exists($filename)) {
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
         <a href ='delathlete.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>'><img src="sup.png" width="16" height="16"></a>
-      <?PHP  } ?>       
+      <?PHP  } ?> 
+     
         
         </td>
   

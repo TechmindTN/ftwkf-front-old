@@ -29,6 +29,10 @@ window.location.href="index.html";
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>Liste des entraineurs</TITLE>
+<style>
+.ml-1 {
+  margin-left: 10% !important;
+}</style>
 </HEAD>
 <BODY>
 
@@ -39,18 +43,26 @@ window.location.href="index.html";
    <!-- Sidebar -->
 <div id='side'></div>
 
+
+
+
+<div id="content" class="ml-1">
+
+ <div  class="container-fluid ">
+
 <!-- <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-1 ">
- </div> -->
+ </div>
 
 <div id="content" >
 
  <div align="center" style="margin-left:11%" class="container-fluid ">
+
  <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
                     <div align="center" class="h3 mb-2 text-gray-800">Entraineurs</div>
 
-<p align="center"><a href="entraineur.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+<p ><a href="entraineur.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i>Ajout</a></p>
 
 <?php 
@@ -111,7 +123,7 @@ $row001 = mysql_fetch_assoc($result001);
 
       <div class="card-body">
                             <div class="table-responsive">
-<table class="table table-bordered" id="dataTable" cellspacing="0" width="100%"  >
+<table class="table table-bordered" id="dataTable" cellspacing="0" width="20%"  >
   
 <thead>	
 <tr>
@@ -130,10 +142,8 @@ $row001 = mysql_fetch_assoc($result001);
 		<td> <div align = "center"> <strong> Discipline</strong> </div> </td>
 		<td ><div align="center"><strong>Photo</strong></div></td>
 		<td ><div align="center"><strong>Diplome</strong></div></td>
-		<td ></td>
-		<td ></td>
-		<td ></td>
-    <td ></td>
+		<td >Actions</td>
+	
 	</tr>
   </thead>
   <tbody>
@@ -181,7 +191,7 @@ if ($type == "مدرب فدرالي"){ $uploaddir ='entrf/' ; }
 if ($etat == "1") {
 ?>
 <?php }else {?>
-	<tr>
+	<tr style="overflow: auto;">
 <?php }?>
 
 	  <td><div align="center"><?php echo $row['saison'];?></div></td>
@@ -206,21 +216,17 @@ if ($etat == "1") {
         <div align="center"><a href ='renouventraineur.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&type<?php echo "=$row[type]";?>'><b>Renouvellementl</b></a>
         </div>
         <?PHP  } ?>       
-      </td>
+     
 
       
-      <td><?PHP 
+   <?PHP 
   //    if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
         <div align="center"><a href ='updentraineur.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&fonct<?php echo "=$row[type]";?>'><b>Modifier</b></a>
         </div>
         <?PHP // } ?>       
         
-        </td>
-
-
-
-<td>
+       
    <?PHP   if (($club == "ADMIN")) { ?>
      
         <div align="center"><a href ='entverif.php?sais<?php echo "=$row[saison]";?>&type<?php echo "=$row[type]";?>&code<?php echo "=$row[n_lic]";?>'><b>Valider</b></a>
@@ -229,14 +235,10 @@ if ($etat == "1") {
 ?>	  
 	  
         
-        </td>
-
-
-
-        <td><?PHP 
+        <?PHP 
       //if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
-        <a href ='delentraineur.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&fonct<?php echo "=$row[type]";?>'><img src="sup.png" width="16" height="16"></a>
+       <div align="center"> <a   href ='delentraineur.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&fonct<?php echo "=$row[type]";?>'><b>Supprimer</b></a></div>
       <?PHP //  } ?>       
         
         </td>
