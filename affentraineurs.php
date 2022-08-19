@@ -31,11 +31,11 @@ window.location.href="index.html";
 <TITLE>Entraineurs</TITLE>
 <style>
   .ml-1{
-    margin-left:15% !important;
+    margin-left:35% !important;
   }
   </style>
 </HEAD>
-<BODY>
+<BODY id="top-page">
 
 
 <!-- Page Wrapper -->
@@ -43,20 +43,21 @@ window.location.href="index.html";
 
 
    <!-- Sidebar -->
-   <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+   <div class="navbar-nav sidebar sidebar-dark accordion">
             <!-- Sidebar -->
             <div id='side'></div></div>
 
 <!-- <div class="col-xs-1 col-lg-3 col-md-4 col-sm-3 col-xl-2 "> -->
 
-<div id="content-wrapper" class="d-flex flex-column ">
- <div id="content " class="ml-1">
+<div id="content-wrapper" class="d-flex flex-column ml-1">
+ <div id="content " class="">
 
-<div class="container-fluid  ">
+<div class="container-fluid ">
 <!-- DataTales Example -->
                    <div class="card shadow mb-4">
                    <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
-                   <div align="center" class="h3 mb-2 text-gray-800">Entraineurs</div>
+                   <h1 class="h3 mb-2 text-gray-800">Entraineurs</h1>
+                   <a href="entraineur.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Ajout</a> 
 
 <?php 
 	   	include('connect.php');
@@ -90,7 +91,7 @@ $row001 = mysql_fetch_assoc($result001);
 ?>
    </select>
 <input name="ok" type="submit" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" value = "Rechercher">
-                 
+      
 
           </form>
       
@@ -230,7 +231,7 @@ if ($etat == "1") {
 </table>
 
 
-<p align="center"><a href="entraineur.php">Ajout</a></p>
+
 </div>
 </div>
 </div>

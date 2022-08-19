@@ -137,7 +137,7 @@ $row = mysql_fetch_assoc($result);
             </div>
         </div>
 
-    </div></div>
+    </div></div></div>
 
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>

@@ -4,7 +4,15 @@
 <HTML lang="ar" dir="ltr">
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Modifier poids</TITLE>
+<link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+
 <script language="JavaScript" src="Calendar1-903.js" type="text/javascript"></script>
 <script language="JavaScript" type="text/javascript">
 function TryCallFunction() {
@@ -19,7 +27,7 @@ function submitdnld() {
 }
 </script>
 <script language="JavaScript" type="text/javascript">
-<!--
+
 
 
 function MM_reloadPage(init) {  //reloads the window if Nav4 resized
@@ -33,34 +41,19 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
   eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
   if (restore) selObj.selectedIndex=0;
 }
-//-->
+
 </script>
 <link href="Calendar.css" rel="stylesheet" type="text/css" />
 <link href="../../styles/default.css" rel="stylesheet" type="text/css" />
 <meta name="Keywords" content="Popup Date Picker, Softricks Javascript Calendar" />
 <meta name="Description" content="Softricks Javascript Popup date picker calendar. The most versatile and feature-packed popup calendar for taking date inputs on the web." />
-</HEAD>
 <style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.Style1 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
-.style2 {
-	color: #0000FF;
-	font-weight: bold;
-	font-size: 36px;
-}
--->
-</style></HEAD>
+.ml-1 {
+  margin-left: 25% !important;
+}</style>
+</HEAD>
 
-<BODY>
+<body>
 
 <?php
 session_start();
@@ -82,49 +75,87 @@ $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 
 ?>
-<div align="center" class="style2">Modification Poids</div>
 
- <form action="addparam.php" method="post" enctype="multipart/form-data" name="MForm">
-  <table width="100%" border="0">
+<div id="wrapper">
+<div class="navbar-nav  sidebar sidebar-dark accordion">
+            <!-- Sidebar -->
+            <div id='side'></div></div>
+ 
+<div class="container ">
 
-    <tr>
-      <td width="16%" align="left">Age</td>
-      <td width="19%" align="left"><input name="age" type="text" id="age" tabindex="2" size="25" value ="<?php echo $row['cat'];?>"></td>
-    </tr>
-
-    <tr>
-      <td align="left">Type</td>
-      <td  align="left"><select name="type" size="1" id="type2" tabindex="5">
+        <div class="card o-hidden border-0 shadow-lg my-5 ml-1">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Modifier Poids</h1>
+                            </div>
+                            <form action="addparam.php" method="post" enctype="multipart/form-data" name="MForm">
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                      <label>Age : </label>
+                                      <input name="age" type="text" id="age" tabindex="2" size="25" value ="<?php echo $row['cat'];?>" class="form-control form-control-user">
+                                    </div>
+                                    <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
+                                    <label>Type </label>
+                                    <select name="type" size="1" id="type2" tabindex="5" class="custom-select">
         <option><?php echo $row['type'];?> </option><option>كطا</option>
         <option>فردي</option>
-      </select></td>
-    </tr>
-
-
-    <tr>
-      <td align="left">Sexe</td>
-      <td align="left"><select name="sexe" size="1" id="sexe" tabindex="3">
+      </select>
+                                    </div>
+                                
+                               
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label>Sexe</label>
+                                    <select name="sexe" size="1" id="sexe" tabindex="3" class="custom-select">
         <option><?php echo $row['sexe'];?> </option>        <option>ذكر</option>
         <option>أنثى</option>
-</select></td>
-    </tr>
-    <tr>
-      <td align="left">Ordre</td>
-      <td align="left"><input name="ord" type="text" id="ord" tabindex="7" size="25" value="<?php echo $row['ordre'];?>"></td>
-    </tr>
-    <tr>
-      <td align="left">Poids</td>
-      <td align="left"><input name="poids" type="text" id="poids" tabindex="8" size="25" value="<?php echo $row['poids'];?>"></td>
-    </tr>
+</select>
+                                    </div>
+                                  
+                                </div>
+                                <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label>Ordre</label>
+                                    <input class="form-control form-control-user" name="ord" type="text" id="ord" tabindex="7" size="25" value="<?php echo $row['ordre'];?>">
+                                    </div><div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label>Poids</label>
+                                    <input  class="form-control form-control-user" name="poids" type="text" id="poids" tabindex="8" size="25" value="<?php echo $row['poids'];?>">
+                                    </div>
+                                    </div>
 
+                                          
+                                        <input name="cod" type="hidden" id="cod" tabindex="100" size="0" value ="<?php echo $row['id'];?>">
+                                    
+                               
+                                <div class="container my-3 ">
+               <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-danger">Modifier</button>
+                     </div>
+             </div>
+                            </form>
+               
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    </div></div></div>
 
-    </table>
-  <p align="center">
-      <input name="id" type="hidden" id="cod" tabindex="100" size="0" value ="<?php echo $row['id'];?>">
-      <input type="submit" name="valider" id="valider" value="Valider">
-  </p>
-</form>
+<!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+    <script src="template.js"></script>
 </body>
 
 </html>

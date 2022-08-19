@@ -30,7 +30,8 @@ window.location.href="index.html";
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Un document bilingue</TITLE>
+<TITLE>Liste de Paiement</TITLE>
+
 </HEAD>
 <?php
 	   	 
@@ -56,7 +57,7 @@ if (isset($_POST['test'])) {
 }
 
 ?>
-<BODY id="">
+<BODY id="page-top">
 <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -65,14 +66,26 @@ if (isset($_POST['test'])) {
    <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
             <!-- Sidebar -->
             <div id='side'></div></div>
-
-
-
-    <form name="stat" method="post" action="">
-<table width="100%" border="0" align="center"  class="text">
+ 
+  <div id="content-wrapper" class="d-flex flex-column ">
+  <div id="content" class="ml-1">
+  <div class="container-fluid">
+<div class="card shadow mb-4">
+<div class="mb-4 ">
+<div class="card-header  py-3 d-sm-flex align-items-center justify-content-between mb-4">
+<table >
+<h1 class="h3 mb-2 text-gray-800">Paiement des Licences </h1><?PHP     if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
+                        <a href="paiement.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Ajouter</a><?php } ?>
+                                 
+                       
+<table >
+<tr>
+          <td><form name="stat" method="post" action="">
+<table>
       <tr><input name="test" type="hidden" id="montant" tabindex="10" size="25" value="1">
-        <td width="50%"><div align="right">Saison</div></td>
-        <td width="50%"><select name="saison" size="1" id="saison" tabindex="9">
+        <td >Saison</td>
+        <td ><select name="saison" size="1" id="saison" tabindex="9" class="custom-select ">
         <option><?php echo $saison;?> </option>
                       <?php
 					   do { 
@@ -84,8 +97,8 @@ if (isset($_POST['test'])) {
 
  <?PHP     if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
 
-        <td width="50%"><div align="right">Club</div></td>
-        <td width="50%"><select name="club1" size="1" id="saison" tabindex="9">
+        <td >Club</td>
+        <td><select name="club1" size="1" id="saison" tabindex="9" class="custom-select ">
         <option><?php echo $club1;?> </option>
                       <?php
 					   do { 
@@ -97,19 +110,14 @@ if (isset($_POST['test'])) {
 <?php } ?>
 
 
-      </tr>
- 
- 
-      <tr>
-        <td colspan="2" align="center"><input name="ok" type="submit" class="Style4" value="Rechercher"></td>
+      
+        <td><input name="ok" type="submit" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" value="Rechercher"></td>
       </tr>
 </table>
-    </form>
+    </form></table> </div>
 
-<div align="center" class="style2">Paiement des Licences</div>
 <?php 
 ?>
-<p align="center"><a href="paiement.php">Ajout</a></p>
 <?php 
 
 if ($test == "1"){
@@ -166,27 +174,29 @@ $totalRows = mysql_num_rows($result000) + 1 ;
 
 
 ?>
-
-<table border="1" width="100%" id="table1">
-	<tr>
-	    <td rowspan="2" ><div align="center"><strong>Club</strong></div></td>
-	    <td rowspan="2" ><div align="center"><strong>Ligue</strong></div></td>
-	    <td rowspan="2" ><div align="center"><strong>Saison</strong></div></td>
-	    <td colspan="<?php echo $totalRows ; ?>" align="center" ><strong> </strong></td>
-	    <td rowspan="2" ><div align="center"><strong>Montant</strong></div></td>
-	    <td rowspan="2" ><div align="center"><strong>Montant Payé</strong></div></td>
-	    <td rowspan="2" ><div align="center"><strong>Reste a Payer</strong></div></td>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-bordered text-center" id="dataTable"   >
+<thead>
+<tr>
+	    <th rowspan="2" >Club</th>
+	    <th rowspan="2" >Ligue</th>
+	    <th rowspan="2" >Saison</th>
+	    <th colspan="<?php echo $totalRows ; ?>" align="center" > Categories</th>
+	    <th rowspan="2" >Montant</th>
+	    <th rowspan="2" >Montant Payé</th>
+	    <th rowspan="2" >Reste a Payer</th>
 	</tr>
 
 	<tr>
 <?php do { ?>
-	  <td align="center"><strong><?php echo $row000['nom'];?></strong></td>
+	  <th ><strong><?php echo $row000['nom'];?></strong></th>
 
 <?php					}while	 ($row000=mysql_fetch_assoc($result000)); 
 
 ?>
-	  <td align="center"><strong>Total</strong></td>
-</tr>
+	  <th>Total</th>
+</tr></thead>
 <?php 
 $query0 ="select club, ligue from athletest group by club, ligue order by ligue, club";
 $result0 = mysql_query($query0,$connexion);
@@ -259,8 +269,10 @@ $ttprix = $ttprix+$tprix;
 				}while	 ($row0=mysql_fetch_assoc($result0)); 
 
 ?>
-</table>
-<table border="1" width="100%">
+</table></div></div>
+<div class="card-body">
+<div class="table-responsive ">
+<table class="table table-bordered " id="dataTable "   >
 	<tr>
 	    <td ><div align="center"><strong>Montant Total </strong></div></td>
 	    <td ><div align="center"><strong><?php echo $ttprix ;?> </strong></div></td>
@@ -270,16 +282,18 @@ $ttprix = $ttprix+$tprix;
 	    <td ><div align="center"><strong><?php echo $ttprix - $montantpaye ;?> </strong></div></td>
 	</tr>
 
-</table>
-<div align="center">::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: </div>
-<table border="1" width="100%" id="table1">
-	<tr>
-	    <td ><div align="center"><strong>Saison</strong></div></td>
+</table></div></div></div>
+<br>
+<div class="card-body">
+
+<div class="table-responsive">
+<table class="table table-bordered" id="dataTable"   >	<tr>
+	    <td ><strong>Saison</strong></td>
 	    <td ><div align="center"><strong>Club</strong></div></td>
 	    <td ><div align="center"><strong>Montant</strong></div></td>
 	    <td ><div align="center"><strong>Date</strong></div></td>
         <td ><div align="center"><strong>Recu</strong></div></td>
-	    <td ><div align="center"><strong></strong></div></td>
+	    <td ><div align="center"><strong>Actions</strong></div></td>
 	</tr>
 <?php
 
@@ -299,7 +313,7 @@ do {
 	  <td><div align="center"><?php echo $row['montant'];?></div></td>
 	  <td><div align="center"><?php echo $row['date'];?></div></td>
 	  <td><div align="center"><?php echo $row['recu'];?></div></td>
-      <td><a href ='delpai.php?code<?php echo "=$row[id]";?>'><img src="sup.png" width="16" height="16"></a>
+      <td align="center"><a href ='delpai.php?code<?php echo "=$row[id]";?>' onclick="return confirm('Vous etes sure de supprimer paiement?')" >Supprimer</a>
         
         </td>
 
@@ -308,16 +322,13 @@ do {
 
 
 ?> 
-</table>
-<?php 
-if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){
-?>
-<p align="center"><a href="paiement.php">Ajout</a></p>
-<?php }} ?>
-<p style="page-break-before:always">
-<p align="center"><input type=button value="Imprimer" onClick="window.print()"></p>
-</div>
+</table></div></div>
 
+<?php } ?>
+<p style="page-break-before:always">
+<p align="center"><input type="button" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm" value="Imprimer" onClick="window.print()"></p>
+</div>
+</div></div>
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -335,5 +346,4 @@ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){
     <script src="assets/js/demo/datatables-demo.js"></script>
     <script src="template.js"></script>
 </body>
-
 </html>

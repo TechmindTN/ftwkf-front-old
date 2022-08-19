@@ -94,8 +94,8 @@ do {
 	  <td><div align="center"><?php echo $row['club'];?></div></td>
 	  <td><div align="center"><?php echo $row['montant'];?></div></td>
 	  <td><div align="center"><?php echo $row['date'];?></div></td>
-      <td><img src="./decharge<?php echo $row['id']. '.jpg';?>?<?php echo time(); ?>" width="33" height="50"></td>
-      <td><a href ='delpai.php?code<?php echo "=$row[id]";?>'><img src="sup.png" width="16" height="16"></a>
+      <td><img src="./decharge<?php echo $row['id']. '.jpg';?>?<?php echo time(); ?>" width="33" height="50"  ></td>
+      <td><a href ='delpai.php?code<?php echo "=$row[id]";?>' onclick="return confirm('Vous etes sure de supprimer cet paiement??')"><img src="sup.png" width="16" height="16"></a>
       <a href ='valpai.php?code<?php echo "=$row[id]";?>'>Valider</a>
         
         </td>
